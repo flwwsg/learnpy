@@ -1,0 +1,50 @@
+child	fork1.py	/^def child():$/;"	f
+os	fork1.py	/^import os$/;"	i
+parent	fork1.py	/^def parent():$/;"	f
+Thread	socket_preview-progs.py	/^from threading import Thread$/;"	i
+client	socket_preview-progs.py	/^from socket_preview import server, client$/;"	i
+mode	socket_preview-progs.py	/^mode =int(sys.argv[1])$/;"	v
+os	socket_preview-progs.py	/^import sys, os$/;"	i
+server	socket_preview-progs.py	/^from socket_preview import server, client$/;"	i
+sys	socket_preview-progs.py	/^import sys, os$/;"	i
+AF_INET	socket_preview.py	/^from socket import socket, AF_INET, SOCK_STREAM$/;"	i
+SOCK_STREAM	socket_preview.py	/^from socket import socket, AF_INET, SOCK_STREAM$/;"	i
+Thread	socket_preview.py	/^	from threading import Thread$/;"	i
+client	socket_preview.py	/^def client(name):$/;"	f
+host	socket_preview.py	/^host = 'localhost'$/;"	v
+port	socket_preview.py	/^port = 50008$/;"	v
+server	socket_preview.py	/^def server():$/;"	f
+socket	socket_preview.py	/^from socket import socket, AF_INET, SOCK_STREAM$/;"	i
+sthread	socket_preview.py	/^	sthread = Thread(target = server)$/;"	v
+adder	thread-add-random.py	/^def adder():$/;"	f
+count	thread-add-random.py	/^count = 0$/;"	v
+threading	thread-add-random.py	/^import threading, time$/;"	i
+threads	thread-add-random.py	/^threads = []$/;"	v
+time	thread-add-random.py	/^import threading, time$/;"	i
+counter	thread-count-wait2.py	/^def counter(myId, count):$/;"	f
+exitmutexes	thread-count-wait2.py	/^exitmutexes = [False] * 10$/;"	v
+stdoutmutex	thread-count-wait2.py	/^stdoutmutex = thread.allocate_lock()$/;"	v
+thread	thread-count-wait2.py	/^import _thread as thread$/;"	i
+counter	thread-count-wait3.py	/^def counter(myId, count, mutex):$/;"	f
+exitmutexes	thread-count-wait3.py	/^exitmutexes = [thread.allocate_lock() for i in range(numthreads)]$/;"	v
+numthreads	thread-count-wait3.py	/^numthreads = 5$/;"	v
+stdoutmutex	thread-count-wait3.py	/^stdoutmutex = thread.allocate_lock()$/;"	v
+thread	thread-count-wait3.py	/^import _thread as thread, time$/;"	i
+time	thread-count-wait3.py	/^import _thread as thread, time$/;"	i
+counter	thread-count.py	/^def counter(myId, count):$/;"	f
+thread	thread-count.py	/^import _thread as thread, time$/;"	i
+time	thread-count.py	/^import _thread as thread, time$/;"	i
+_thread	thread1.py	/^import _thread$/;"	i
+child	thread1.py	/^def child(tid):$/;"	f
+parent	thread1.py	/^def parent():$/;"	f
+Power	threadpower.py	/^class Power():$/;"	c
+__init__	threadpower.py	/^	def __init__(self, i):$/;"	m	class:Power
+action	threadpower.py	/^	def action(self):$/;"	m	class:Power
+obj	threadpower.py	/^obj = Power(2)$/;"	v
+threading	threadpower.py	/^import threading$/;"	i
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_PROGRAM_VERSION	5.8	//
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
