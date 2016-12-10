@@ -18,4 +18,5 @@ for i in range(100):
 for thread in threads:
 	thread.join()
 
-print(count)
+print('count is %s ' % count, )
+exit()
