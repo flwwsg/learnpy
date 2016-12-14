@@ -2,7 +2,7 @@
 '''launchmodes.py'''
 import os, sys
 
-pyfile = (sys.platform[:3] == 'win' and 'python.exe') or 'python'
+pyfile = (sys.platform[:3] == 'win' and 'py -3') or 'python3'
 pypath = sys.executable 
 
 def fixWindwsPath(cmdline):
@@ -28,7 +28,7 @@ class LaunchMode:
 class System(LaunchMode):
 	def run(self, cmdline):
 		cmdline = fixWindwsPath(cmdline)
-		os.system('%s %s' % (pypath, cmdline))
+		os.system('"%s" %s' % (pypath, cmdline))
 
 class Popen(LaunchMode):
 	def run(self, cmdline):
