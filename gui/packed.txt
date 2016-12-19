@@ -1,0 +1,498 @@
+::::::::::::::::::::textpak=>D:/dev/learnpy/gui/.tags
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Alarm	.\alarm-hide.py	/^class Alarm(alarm.Alarm):$/;"	c
+Alarm	.\alarm-withdraw.py	/^class Alarm(alarm.Alarm):$/;"	c
+Alarm	.\alarm.py	/^class Alarm(Frame):$/;"	c
+Button	.\toplevel0.py	/^from tkinter import Toplevel, Button, Label$/;"	i
+ButtonPicsDemo	.\buttonpics.py	/^class ButtonPicsDemo(Frame):$/;"	c
+CanvasEventsDemo	.\canvasDraw.py	/^class CanvasEventsDemo:$/;"	c
+CanvasEventsDemo	.\canvasDraw_tags.py	/^class CanvasEventsDemo(canvasDraw.CanvasEventsDemo):$/;"	c
+CanvasEventsDemo	.\canvasDraw_tags_after.py	/^class CanvasEventsDemo(canvasDraw_tags.CanvasEventsDemo):$/;"	c
+CanvasEventsDemo	.\canvasDraw_tags_thread.py	/^class CanvasEventsDemo(canvasDraw_tags.CanvasEventsDemo):$/;"	c
+Checkbar	.\buttonbars.py	/^class Checkbar(Frame):$/;"	c
+Demo	.\demoCheck.py	/^class Demo(Frame):$/;"	c
+Demo	.\demoDlg-print.py	/^class Demo(Frame):$/;"	c
+Demo	.\demoDlg.py	/^class Demo(Frame):$/;"	c
+Demo	.\demoRadio.py	/^class Demo(Frame):$/;"	c
+Demo	.\demoScale.py	/^class Demo(Frame):$/;"	c
+Fork	.\launchmodes.py	/^class Fork(LaunchMode):$/;"	c
+GuiMaker	.\guimaker.py	/^class GuiMaker(Frame):$/;"	c
+GuiMakerFrameMenu	.\guimaker.py	/^GuiMakerFrameMenu = GuiMaker$/;"	v
+GuiMakerWindowMenu	.\guimaker.py	/^class GuiMakerWindowMenu(GuiMaker):$/;"	c
+GuiMixin	.\guimaker.py	/^	from guimixin import GuiMixin$/;"	i
+GuiMixin	.\guimixin.py	/^class GuiMixin:$/;"	c
+GuiMixin	.\shellgui.py	/^from guimixin import GuiMixin$/;"	i
+Hello	.\big_gui.py	/^class Hello(GuiMixin, GuiMakerWindowMenu):$/;"	c
+Hello	.\gui6.py	/^class Hello(Frame):$/;"	c
+Hello	.\gui6b.py	/^from gui6 import Hello$/;"	i
+HelloClass	.\gui3c.py	/^class HelloClass:$/;"	c
+Image	.\menuDemo2.py	/^		from PIL.ImageTk import PhotoImage, Image$/;"	i
+Image	.\viewer_thumbs.py	/^from PIL import Image$/;"	i
+Label	.\toplevel0.py	/^from tkinter import Toplevel, Button, Label$/;"	i
+LaunchMode	.\launchmodes.py	/^class LaunchMode:$/;"	c
+NewMenuDemo	.\menuDemo.py	/^class NewMenuDemo(Frame):$/;"	c
+NewMenuDemo	.\menuDemo2.py	/^class NewMenuDemo(Frame):$/;"	c
+PhotoImage	.\menuDemo2.py	/^		from PIL.ImageTk import PhotoImage, Image$/;"	i
+PhotoImage	.\viewer-pil.py	/^from PIL.ImageTk import PhotoImage$/;"	i
+PhotoImage	.\viewer-thumbs-fixed.py	/^from PIL.ImageTk import PhotoImage$/;"	i
+PhotoImage	.\viewer-thumbs-grid.py	/^from PIL.ImageTk import PhotoImage$/;"	i
+PhotoImage	.\viewer_thumbs.py	/^from PIL.ImageTk import PhotoImage$/;"	i
+PhotoImage	.\viewer_thumbs_scrolled.py	/^from PIL.ImageTk import PhotoImage$/;"	i
+Popen	.\launchmodes.py	/^class Popen(LaunchMode):$/;"	c
+PortableLauncher	.\demoAll-prg.py	/^from launchmodes import PortableLauncher$/;"	i
+PortableLauncher	.\guimixin.py	/^from launchmodes import PortableLauncher, System$/;"	i
+PortableLauncher	.\launchmodes.py	/^	PortableLauncher = Fork$/;"	v
+PortableLauncher	.\launchmodes.py	/^	PortableLauncher = Spawn$/;"	v
+Process	.\demoAll-prg-multi.py	/^from multiprocessing import Process$/;"	i
+QuietPortableLauncher	.\launchmodes.py	/^class QuietPortableLauncher(PortableLauncher):$/;"	c
+Quitter	.\buttonbars.py	/^	from quitter import Quitter$/;"	i
+Quitter	.\demoAll-frm.py	/^from quitter import Quitter$/;"	i
+Quitter	.\demoCheck.py	/^from quitter import Quitter$/;"	i
+Quitter	.\demoDlg-print.py	/^from quitter import Quitter$/;"	i
+Quitter	.\demoDlg.py	/^from quitter import Quitter$/;"	i
+Quitter	.\demoRadio.py	/^from quitter import Quitter$/;"	i
+Quitter	.\demoScale.py	/^from quitter import Quitter$/;"	i
+Quitter	.\entry1.py	/^from quitter import Quitter$/;"	i
+Quitter	.\entry2.py	/^from quitter import Quitter$/;"	i
+Quitter	.\entry3.py	/^from quitter import Quitter$/;"	i
+Quitter	.\grid5c.py	/^from quitter import Quitter$/;"	i
+Quitter	.\quitter.py	/^class Quitter(Frame):$/;"	c
+Quitter	.\simpleedit.py	/^from quitter import Quitter$/;"	i
+Radiobar	.\buttonbars.py	/^class Radiobar(Frame):$/;"	c
+ScrolledCanvas	.\scrolledcanvas.py	/^class ScrolledCanvas(Frame):$/;"	c
+ScrolledList	.\scrolledlist.py	/^class ScrolledList(Frame):$/;"	c
+ScrolledText	.\guimixin.py	/^from scrolledtext import ScrolledText$/;"	i
+ScrolledText	.\scrolledtext.py	/^class ScrolledText(Frame):$/;"	c
+ScrolledText	.\simpleedit.py	/^from scrolledtext import ScrolledText$/;"	i
+ShellGui	.\shellgui.py	/^class ShellGui(GuiMixin, GuiMakerWindowMenu):$/;"	c
+SimpleEditor	.\simpleedit.py	/^class SimpleEditor(ScrolledText):$/;"	c
+Spawn	.\launchmodes.py	/^class Spawn(LaunchMode):$/;"	c
+Start	.\launchmodes.py	/^class Start(LaunchMode):$/;"	c
+StartArgs	.\launchmodes.py	/^class StartArgs(LaunchMode):$/;"	c
+SumGrid	.\grid5c.py	/^class SumGrid(Frame):$/;"	c
+System	.\guimixin.py	/^from launchmodes import PortableLauncher, System$/;"	i
+System	.\launchmodes.py	/^class System(LaunchMode):$/;"	c
+TestAppFrameMenu	.\guimaker.py	/^	class TestAppFrameMenu(GuiMixin,GuiMakerFrameMenu):$/;"	c	class:GuiMakerWindowMenu
+TestAppWindowMenu	.\guimaker.py	/^	class TestAppWindowMenu(GuiMixin, GuiMakerWindowMenu):$/;"	c	class:GuiMakerWindowMenu
+TestAppWindowMenuBasic	.\guimaker.py	/^	class TestAppWindowMenuBasic(GuiMakerWindowMenu):$/;"	c	class:GuiMakerWindowMenu
+TestMixin	.\guimixin.py	/^	class TestMixin(GuiMixin, Frame):$/;"	c	class:GuiMixin
+Top_level	.\launchmodes.py	/^class Top_level(LaunchMode):$/;"	c
+Toplevel	.\toplevel0.py	/^from tkinter import Toplevel, Button, Label$/;"	i
+ViewOne	.\viewer-thumbs-fixed.py	/^from viewer_thumbs import makeThumbs, ViewOne$/;"	i
+ViewOne	.\viewer-thumbs-grid.py	/^from viewer_thumbs import makeThumbs, ViewOne$/;"	i
+ViewOne	.\viewer_thumbs.py	/^class ViewOne(Toplevel):$/;"	c
+ViewOne	.\viewer_thumbs_scrolled.py	/^from viewer_thumbs import makeThumbs, ViewOne$/;"	i
+__call__	.\launchmodes.py	/^	def __call__(self):$/;"	m	class:LaunchMode	file:
+__init__	.\alarm-hide.py	/^	def __init__(self, msecs=1000):$/;"	m	class:Alarm
+__init__	.\alarm.py	/^	def __init__(self, msecs=1000):$/;"	m	class:Alarm
+__init__	.\buttonbars.py	/^	def __init__(self, parent=None, picks=[], side=LEFT, anchor=W):$/;"	m	class:Checkbar
+__init__	.\buttonbars.py	/^	def __init__(self, parent=None, picks=[], side=LEFT, anchor=W):$/;"	m	class:Radiobar
+__init__	.\buttonpics.py	/^	def __init__(self, gifdir=gifdir, parent=None):$/;"	m	class:ButtonPicsDemo
+__init__	.\canvasDraw.py	/^	def __init__(self, parent=None):$/;"	m	class:CanvasEventsDemo
+__init__	.\canvasDraw_tags.py	/^	def __init__(self, parent=None):$/;"	m	class:CanvasEventsDemo
+__init__	.\demoCheck.py	/^	def __init__(self, parent=None, **Options):$/;"	m	class:Demo
+__init__	.\demoDlg-print.py	/^	def __init__(self, parent=None):$/;"	m	class:Demo
+__init__	.\demoDlg.py	/^	def __init__(self, parent=None, **options):$/;"	m	class:Demo
+__init__	.\demoRadio.py	/^	def __init__(self, parent=None, **options):$/;"	m	class:Demo
+__init__	.\demoScale.py	/^	def __init__(self, parent=None, **options):$/;"	m	class:Demo
+__init__	.\grid5c.py	/^	def __init__(self, parent=None, numrow=5, numcol=5):$/;"	m	class:SumGrid
+__init__	.\gui3c.py	/^	def __init__(self):$/;"	m	class:HelloClass
+__init__	.\gui6.py	/^	def __init__(self, parent=None):$/;"	m	class:Hello
+__init__	.\guimaker.py	/^	def __init__(self, parent=None):$/;"	m	class:GuiMaker
+__init__	.\guimixin.py	/^		def __init__(self, parent=None):$/;"	m	class:GuiMixin.TestMixin
+__init__	.\launchmodes.py	/^	def __init__(self, label, command):$/;"	m	class:LaunchMode
+__init__	.\menuDemo.py	/^	def __init__(self, parent=None):$/;"	m	class:NewMenuDemo
+__init__	.\menuDemo2.py	/^	def __init__(self, parent=None):$/;"	m	class:NewMenuDemo
+__init__	.\quitter.py	/^	def __init__(self, parent=None):$/;"	m	class:Quitter
+__init__	.\scrolledcanvas.py	/^	def __init__(self, parent=None, color='brown'):$/;"	m	class:ScrolledCanvas
+__init__	.\scrolledlist.py	/^	def __init__(self, options, parent=None):$/;"	m	class:ScrolledList
+__init__	.\scrolledtext.py	/^	def __init__(self, parent=None, text='', file=None):$/;"	m	class:ScrolledText
+__init__	.\simpleedit.py	/^	def __init__(self, parent=None, file=None):$/;"	m	class:SimpleEditor
+__init__	.\viewer_thumbs.py	/^	def __init__(self, imgdir, imgfile):$/;"	m	class:ViewOne
+_thread	.\canvasDraw_tags_thread.py	/^import _thread, time$/;"	i
+addComponents	.\demoAll-frm.py	/^def addComponents(root):$/;"	f
+addMenuItems	.\guimaker.py	/^	def addMenuItems(self, menu, items):$/;"	m	class:GuiMaker
+alarm	.\alarm-hide.py	/^import alarm$/;"	i
+alarm	.\alarm-withdraw.py	/^import alarm$/;"	i
+allstates	.\buttonbars.py	/^	def allstates():$/;"	f
+allstates	.\demoAll-win.py	/^def allstates(demoObjects):$/;"	f
+announce	.\launchmodes.py	/^	def announce(self, text):$/;"	m	class:LaunchMode
+announce	.\launchmodes.py	/^	def announce(self, text):$/;"	m	class:QuietPortableLauncher
+askcolor	.\dialogTable.py	/^from tkinter.colorchooser import askcolor$/;"	i
+askcolor	.\setcolor.py	/^from tkinter.colorchooser import askcolor$/;"	i
+askfloat	.\dialogTable.py	/^from tkinter.simpledialog import askfloat$/;"	i
+askokcancel	.\quitter.py	/^from tkinter.messagebox import askokcancel$/;"	i
+askopenfilename	.\dialogTable.py	/^from tkinter.filedialog import askopenfilename$/;"	i
+askopenfilename	.\grid5c.py	/^from tkinter.filedialog import askopenfilename$/;"	i
+askquestion	.\dialogTable.py	/^from tkinter.messagebox import askquestion, showerror$/;"	i
+asksaveasfilename	.\simpleedit.py	/^from tkinter.filedialog import asksaveasfilename$/;"	i
+askstring	.\simpleedit.py	/^from tkinter.simpledialog import askstring$/;"	i
+browser	.\guimixin.py	/^	def browser(self, filename):$/;"	m	class:GuiMixin
+btn	.\entry1.py	/^btn = Button(root, text='Fetch', command=fetch)$/;"	v
+btn	.\texttags.py	/^btn = Button(text, text='Spam', command=lambda: hello(0))$/;"	v
+callback	.\dlg1.py	/^def callback():$/;"	f
+canv	.\canvas-bind.py	/^canv = Canvas(root, width=100, height=100)$/;"	v
+canvas	.\canvas1.py	/^canvas = Canvas(width=525, height=300, bg='white')$/;"	v
+canvasDraw	.\canvasDraw_tags.py	/^import canvasDraw, time$/;"	i
+canvasDraw_tags	.\canvasDraw_tags_after.py	/^import canvasDraw_tags$/;"	i
+canvasDraw_tags	.\canvasDraw_tags_thread.py	/^import canvasDraw_tags$/;"	i
+chk	.\demo-chk-auto.py	/^	chk = Checkbutton(root, text=str(i), variable=var)$/;"	v
+clone	.\guimixin.py	/^	def clone(self, args=()):$/;"	m	class:GuiMixin
+colors	.\grid1.py	/^colors = ['red', 'green', 'orange','white', 'yellow', 'blue']$/;"	v
+colors	.\grid2.py	/^colors = ['red', 'green', 'orange','white', 'yellow', 'blue']$/;"	v
+colors	.\grid3.py	/^colors = ['red', 'white', 'blue']$/;"	v
+cols	.\grid5.py	/^	cols = []$/;"	v
+command	.\gui2b.py	/^	command=(lambda: print('Hello lambda world') or sys.exit())).pack(side=LEFT, expand=YES, fill=X)$/;"	v
+createWidgets	.\menuDemo.py	/^	def createWidgets(self):$/;"	m	class:NewMenuDemo
+createWidgets	.\menuDemo2.py	/^	def createWidgets(self):$/;"	m	class:NewMenuDemo
+create_oval_tagged	.\canvasDraw_tags.py	/^	def create_oval_tagged(self, x1, y1, x2, y2):$/;"	m	class:CanvasEventsDemo
+create_rectangle_tagged	.\canvasDraw_tags.py	/^	def create_rectangle_tagged(self, x1, y1, x2, y2):$/;"	m	class:CanvasEventsDemo
+demoCheck	.\buttonpics-func.py	/^import demoCheck$/;"	i
+demoCheck	.\buttonpics.py	/^import demoCheck$/;"	i
+demoModules	.\demoAll-frm.py	/^demoModules = ['demoDlg','demoCheck','demoRadio','demoScale']$/;"	v
+demoModules	.\demoAll-prg-multi.py	/^demoModules = ['demoDlg', 'demoRadio', 'demoCheck', 'demoScale']$/;"	v
+demoModules	.\demoAll-prg.py	/^demoModules = ['demoDlg', 'demoRadio', 'demoCheck', 'demoScale']$/;"	v
+demoModules	.\demoAll-win.py	/^demoModules = ['demoDlg', 'demoRadio', 'demoCheck', 'demoScale']$/;"	v
+demos	.\demoAll-win.py	/^demos = makePopups(demoModules)$/;"	v
+demos	.\demoCheck.py	/^from dialogTable import demos$/;"	i
+demos	.\demoDlg-print.py	/^from dialogTable import demos$/;"	i
+demos	.\demoDlg.py	/^from dialogTable import demos$/;"	i
+demos	.\demoRadio.py	/^from dialogTable import demos$/;"	i
+demos	.\demoScale.py	/^from dialogTable import demos$/;"	i
+demos	.\dialogTable.py	/^demos = {$/;"	v
+dialog	.\big_gui.py	/^	def dialog(self):$/;"	m	class:Hello
+dialog	.\dlg-custom.py	/^def dialog():$/;"	f
+draw	.\buttonpics-func.py	/^def draw():$/;"	f
+draw	.\buttonpics.py	/^	def draw(self):$/;"	m	class:ButtonPicsDemo
+dumpState	.\demoAll-frm.py	/^def dumpState():$/;"	f
+editMenu	.\menuDemo.py	/^	def editMenu(self):$/;"	m	class:NewMenuDemo
+editMenu	.\menuDemo2.py	/^	def editMenu(self):$/;"	m	class:NewMenuDemo
+ent	.\entry1.py	/^ent = Entry(root)$/;"	v
+ent	.\grid5.py	/^		ent = Entry(relief=RIDGE)$/;"	v
+ents	.\entry2.py	/^	ents = makeform(root, fields)$/;"	v
+errmsg	.\dlg1.py	/^errmsg = 'Sorry, no Spam allowed!'$/;"	v
+errorbox	.\guimixin.py	/^	def errorbox(self, text):$/;"	m	class:GuiMixin
+exit	.\gui6b.py	/^from sys import exit$/;"	i
+fetch	.\entry1.py	/^def fetch():$/;"	f
+fetch	.\entry2.py	/^def fetch(entries):$/;"	f
+fetch	.\entry3.py	/^def fetch(vars):$/;"	f
+fields	.\entry2.py	/^fields = 'Name', 'Job', 'Pay'$/;"	v
+fields	.\entry3.py	/^fields = 'Name','Job','Pay'$/;"	v
+fileOpen	.\big_gui.py	/^	def fileOpen(self):$/;"	m	class:Hello
+files	.\buttonpics-func.py	/^files = glob(gifdir+'*.gif')$/;"	v
+fillContent	.\scrolledcanvas.py	/^	def fillContent(self, canv):$/;"	m	class:ScrolledCanvas
+fillMenu	.\menuDemo.py	/^	def fillMenu(self):$/;"	m	class:NewMenuDemo
+fillMenu	.\menuDemo2.py	/^	def fillMenu(self):$/;"	m	class:NewMenuDemo
+fixWindwsPath	.\launchmodes.py	/^def fixWindwsPath(cmdline):$/;"	f
+forToolBar	.\shellgui.py	/^	def forToolBar(self, label):$/;"	m	class:ShellGui
+gettext	.\scrolledtext.py	/^	def gettext(self):$/;"	m	class:ScrolledText
+gifdir	.\buttonpics-func.py	/^gifdir = '..\/gifs\/'$/;"	v
+gifdir	.\buttonpics.py	/^gifdir = '..\/gifs\/'$/;"	v
+glob	.\buttonpics-func.py	/^from glob import glob$/;"	i
+glob	.\buttonpics.py	/^from glob import glob$/;"	i
+greenting	.\big_gui.py	/^	def greenting(self):$/;"	m	class:Hello
+greeting	.\gui4.py	/^def greeting():$/;"	f
+greeting	.\menuDemo.py	/^	def greeting(self):$/;"	m	class:NewMenuDemo
+greeting	.\menuDemo2.py	/^	def greeting(self):$/;"	m	class:NewMenuDemo
+gridbox	.\grid2.py	/^def gridbox(parent):$/;"	f
+gridbox	.\grid3.py	/^def gridbox(root):$/;"	f
+gui	.\buttonbars.py	/^	gui = Radiobar(root, ['win', 'x11', 'mac'], side=TOP, anchor=NW)$/;"	v
+handleList	.\scrolledlist.py	/^	def handleList(self, event):$/;"	m	class:ScrolledList
+handleList	.\shellgui.py	/^	def handleList(self, event):$/;"	m	class:ShellGui
+hello	.\gui3e.py	/^def hello(event):$/;"	f
+hello	.\texttags.py	/^def hello(event):$/;"	f
+help	.\guimaker.py	/^	def help(self):$/;"	m	class:GuiMaker
+help	.\guimixin.py	/^	def help(self):$/;"	m	class:GuiMixin
+helpButton	.\guimaker.py	/^	helpButton = True$/;"	v	class:GuiMaker
+imageMenu	.\menuDemo.py	/^	def imageMenu(self):$/;"	m	class:NewMenuDemo
+imageMenu	.\menuDemo2.py	/^	def imageMenu(self):$/;"	m	class:NewMenuDemo
+images	.\buttonpics-func.py	/^images = [(x, PhotoImage(file=x)) for x in files]$/;"	v
+img	.\texttags.py	/^img = PhotoImage(file='..\/gifs\/a.gif')$/;"	v
+imgdir	.\viewer-pil.py	/^imgdir = '..\/images\/'$/;"	v
+imgdir	.\viewer-thumbs-fixed.py	/^	imgdir = (len(sys.argv) > 1 and sys.argv[1]) or '..\/images'$/;"	v
+imgdir	.\viewer-thumbs-grid.py	/^	imgdir = (len(sys.argv) > 1 and sys.argv[1]) or '..\/images'$/;"	v
+imgdir	.\viewer_thumbs.py	/^	imgdir = (len(sys.argv) > 1 and sys.argv[1]) or '..\/images'$/;"	v
+imgdir	.\viewer_thumbs_scrolled.py	/^	imgdir = '..\/images' if len(sys.argv) < 2 else sys.argv[1]$/;"	v
+imgfile	.\viewer-pil.py	/^	imgfile = sys.argv[1]$/;"	v
+imgfile	.\viewer-pil.py	/^imgfile = 'forests1.jpg'$/;"	v
+imgobj	.\viewer-pil.py	/^imgobj = PhotoImage(file=imgpath)$/;"	v
+imgpath	.\viewer-pil.py	/^imgpath = os.path.join(imgdir, imgfile)$/;"	v
+infobox	.\guimixin.py	/^	def infobox(self, title, text, *args):$/;"	m	class:GuiMixin
+labelfont	.\bind.py	/^labelfont = ('Courier', 20, 'bold')$/;"	v
+labelfont	.\config-label.py	/^labelfont = ('times',20,'bold')$/;"	v
+lbl	.\buttonpics-func.py	/^lbl = Label(root, text='none', bg='blue', fg='red')$/;"	v
+lng	.\buttonbars.py	/^	lng = Checkbar(root, ['Python', 'C#', 'Java','C++'])$/;"	v
+makeMenuBar	.\guimaker.py	/^	def makeMenuBar(self):$/;"	m	class:GuiMaker
+makeMenuBar	.\guimaker.py	/^	def makeMenuBar(self):$/;"	m	class:GuiMakerWindowMenu
+makeMenuBar	.\menuDemo.py	/^	def makeMenuBar(self):$/;"	m	class:NewMenuDemo
+makeMenuBar	.\menuDemo2.py	/^	def makeMenuBar(self):$/;"	m	class:NewMenuDemo
+makePopups	.\demoAll-win.py	/^def makePopups(modnames):$/;"	f
+makeThumbs	.\viewer-thumbs-fixed.py	/^from viewer_thumbs import makeThumbs, ViewOne$/;"	i
+makeThumbs	.\viewer-thumbs-grid.py	/^from viewer_thumbs import makeThumbs, ViewOne$/;"	i
+makeThumbs	.\viewer_thumbs.py	/^def makeThumbs(imgdir, size=(100,100), subdir='thumbs'):$/;"	f
+makeThumbs	.\viewer_thumbs_scrolled.py	/^from viewer_thumbs import makeThumbs, ViewOne$/;"	i
+makeTollBar	.\menuDemo.py	/^	def makeTollBar(self):$/;"	m	class:NewMenuDemo
+makeTollBar	.\menuDemo2.py	/^	def makeTollBar(self, size=(40,40)):$/;"	m	class:NewMenuDemo
+makeToolBar	.\guimaker.py	/^	def makeToolBar(self):$/;"	m	class:GuiMaker
+makeWidgets	.\big_gui.py	/^	def makeWidgets(self):$/;"	m	class:Hello
+makeWidgets	.\grid5c.py	/^	def makeWidgets(self, numrow, numcol):$/;"	m	class:SumGrid
+makeWidgets	.\guimaker.py	/^	def makeWidgets(self):$/;"	m	class:GuiMaker
+makeWidgets	.\scrolledlist.py	/^	def makeWidgets(self, options):$/;"	m	class:ScrolledList
+makeWidgets	.\shellgui.py	/^	def makeWidgets(self):$/;"	m	class:ShellGui
+make_widgets	.\gui6.py	/^	def make_widgets(self):$/;"	m	class:Hello
+makeform	.\entry2.py	/^def makeform(root, fields):$/;"	f
+makeform	.\entry3.py	/^def makeform(root, fields):$/;"	f
+makemenu	.\menu_frm-multi.py	/^from menu_frm import makemenu$/;"	i
+makemenu	.\menu_frm.py	/^def makemenu(parent):$/;"	f
+makemenu	.\menu_win.py	/^def makemenu(win):$/;"	f
+makemodal	.\dlg-custom.py	/^makemodal = (len(sys.argv) > 1)$/;"	v
+makewidgets	.\scrolledtext.py	/^	def makewidgets(self):$/;"	m	class:ScrolledText
+math	.\viewer-thumbs-fixed.py	/^import sys, math$/;"	i
+math	.\viewer-thumbs-grid.py	/^import sys, math$/;"	i
+math	.\viewer_thumbs.py	/^import os, sys, math$/;"	i
+math	.\viewer_thumbs_scrolled.py	/^import sys, math$/;"	i
+menuBar	.\guimaker.py	/^	menuBar = [$/;"	v	class:GuiMakerWindowMenu
+menuBar	.\guimaker.py	/^	menuBar = []$/;"	v	class:GuiMaker
+message	.\gui6.py	/^	def message(self):$/;"	m	class:Hello
+mnu	.\menu_frm-multi.py	/^	mnu = makemenu(root)$/;"	v
+more	.\big_gui.py	/^	def more(self):$/;"	m	class:Hello
+moveEm	.\canvasDraw_tags_after.py	/^	def moveEm(self, tag, moremoves):$/;"	m	class:CanvasEventsDemo
+moveEm	.\canvasDraw_tags_thread.py	/^	def moveEm(self, tag, moremoves):$/;"	m	class:CanvasEventsDemo
+moveInSquares	.\canvasDraw_tags.py	/^	def moveInSquares(self, tag):$/;"	m	class:CanvasEventsDemo
+moveInSquares	.\canvasDraw_tags_after.py	/^	def moveInSquares(self, tag):$/;"	m	class:CanvasEventsDemo
+moveInSquares	.\canvasDraw_tags_thread.py	/^	def moveInSquares(self, tag):$/;"	m	class:CanvasEventsDemo
+msg	.\menu_frm.py	/^	msg = Label(root, text='Window menu basics')$/;"	v
+msg	.\menu_win.py	/^	msg = Label(root, text='Window menu basics')$/;"	v
+msg	.\message.py	/^msg = Message(text='Oh by the way, which one\\'s Pink')$/;"	v
+msg	.\toplevel2.py	/^	msg = Button(win, text=tree, command=win.destroy)$/;"	v
+notdone	.\guimixin.py	/^	def notdone(self):$/;"	m	class:GuiMixin
+notdone	.\menuDemo.py	/^	def notdone(self):$/;"	m	class:NewMenuDemo
+notdone	.\menuDemo2.py	/^	def notdone(self):$/;"	m	class:NewMenuDemo
+notdone	.\menu_frm.py	/^def notdone():$/;"	f
+notdone	.\menu_win.py	/^def notdone():$/;"	f
+obj1	.\canvas-bind.py	/^obj1 = canv.create_text(50, 30, text='Click me one')$/;"	v
+obj2	.\canvas-bind.py	/^obj2 = canv.create_text(50, 70, text='Click me two')$/;"	v
+onArrowKey	.\bind.py	/^def onArrowKey(event):$/;"	f
+onCanvasClick	.\canvas-bind.py	/^def onCanvasClick(event):$/;"	f
+onClear	.\canvasDraw.py	/^	def onClear(self, event):$/;"	m	class:CanvasEventsDemo
+onClear	.\grid5c.py	/^	def onClear(self):$/;"	m	class:SumGrid
+onCut	.\simpleedit.py	/^	def onCut(self):$/;"	m	class:SimpleEditor
+onDoubleClick	.\scrolledcanvas.py	/^	def onDoubleClick(self, event):$/;"	m	class:ScrolledCanvas
+onDoubleLeftClick	.\bind.py	/^def onDoubleLeftClick(event):$/;"	f
+onFind	.\simpleedit.py	/^	def onFind(self):$/;"	m	class:SimpleEditor
+onGrow	.\canvasDraw.py	/^	def onGrow(self, event):$/;"	m	class:CanvasEventsDemo
+onKeyPress	.\bind.py	/^def onKeyPress(event):$/;"	f
+onLeftClick	.\bind.py	/^def onLeftClick(event):$/;"	f
+onLeftDrag	.\bind.py	/^def onLeftDrag(event):$/;"	f
+onLoad	.\grid5c.py	/^	def onLoad(self):$/;"	m	class:SumGrid
+onMiddleClick	.\bind.py	/^def onMiddleClick(event):$/;"	f
+onMove	.\canvasDraw.py	/^	def onMove(self, event):$/;"	m	class:CanvasEventsDemo
+onMove	.\demoScale.py	/^	def onMove(self,value):$/;"	m	class:Demo
+onMoveOvals	.\canvasDraw_tags.py	/^	def onMoveOvals(self, event):$/;"	m	class:CanvasEventsDemo
+onMoveRectangles	.\canvasDraw_tags.py	/^	def onMoveRectangles(self, event):$/;"	m	class:CanvasEventsDemo
+onObjectClick	.\canvas-bind.py	/^def onObjectClick(event):$/;"	f
+onPaste	.\simpleedit.py	/^	def onPaste(self):$/;"	m	class:SimpleEditor
+onPress	.\demoRadio.py	/^	def onPress(self):$/;"	m	class:Demo
+onPress	.\grid5.py	/^def onPress():$/;"	f
+onPrint	.\grid5c.py	/^	def onPrint(self):$/;"	m	class:SumGrid
+onReturnKey	.\bind.py	/^def onReturnKey(event):$/;"	f
+onRightClick	.\bind.py	/^def onRightClick(event):$/;"	f
+onRun	.\demoScale.py	/^	def onRun(self):$/;"	m	class:Demo
+onSave	.\simpleedit.py	/^	def onSave(self):$/;"	m	class:SimpleEditor
+onStart	.\canvasDraw.py	/^	def onStart(self, event):$/;"	m	class:CanvasEventsDemo
+onSum	.\grid5c.py	/^	def onSum(self):$/;"	m	class:SumGrid
+opt1	.\optionmenu.py	/^opt1 = OptionMenu(root, var1, 'spam','eggs','toast')$/;"	v
+opt2	.\optionmenu.py	/^opt2 = OptionMenu(root, var2, 'ham','bacon', 'sausage')$/;"	v
+options	.\scrolledlist.py	/^	options = ['Lumberjack-%s' % x for x in range(20)]$/;"	v
+os	.\big_gui.py	/^import sys, os$/;"	i
+os	.\launchmodes.py	/^import os, sys$/;"	i
+os	.\viewer-pil.py	/^import os,sys$/;"	i
+os	.\viewer_thumbs.py	/^import os, sys, math$/;"	i
+other	.\guimixin.py	/^		def other(self):$/;"	m	class:GuiMixin.TestMixin
+packbox	.\grid2.py	/^def packbox(parent):$/;"	f
+packbox	.\grid3.py	/^def packbox(root):$/;"	f
+parent	.\gui6b.py	/^parent = Frame(None)$/;"	v
+parts	.\demoAll-frm.py	/^parts = []$/;"	v
+photo	.\canvas1.py	/^	photo = PhotoImage(file='..\/gifs\/a.gif')$/;"	v
+pickDemo	.\big_gui.py	/^	def pickDemo(self):$/;"	m	class:Hello
+pix	.\buttonpics-func.py	/^pix = Button(root, text='Press me', command=draw, bg='white')$/;"	v
+printit	.\demoDlg-print.py	/^	def printit(self, name):$/;"	m	class:Demo
+push	.\setcolor.py	/^push = Button(root, text='Set BackGround Color', command=setBgColor)$/;"	v
+pyfile	.\launchmodes.py	/^pyfile = (sys.platform[:3] == 'win' and 'python.exe') or 'python3'$/;"	v
+pypath	.\launchmodes.py	/^pypath = sys.executable $/;"	v
+question	.\guimixin.py	/^	def question(self, title, text, *args):$/;"	m	class:GuiMixin
+quit	.\gui3c.py	/^	def quit(self):$/;"	m	class:HelloClass
+quit	.\gui3e.py	/^def quit(event):$/;"	f
+quit	.\guimixin.py	/^	def quit(self):$/;"	m	class:GuiMixin
+quit	.\menuDemo.py	/^	def quit(self):$/;"	m	class:NewMenuDemo
+quit	.\menuDemo2.py	/^	def quit(self):$/;"	m	class:NewMenuDemo
+quit	.\quitter.py	/^	def quit(self):$/;"	m	class:Quitter
+r	.\grid1.py	/^r = 0$/;"	v
+rad	.\demo-radio-auto.py	/^	rad = Radiobutton(root, text=str(i), value=i, variable=var)$/;"	v
+radio1	.\test.PY	/^def radio1():$/;"	f
+random	.\buttonpics-func.py	/^import random$/;"	i
+random	.\buttonpics.py	/^import random$/;"	i
+repeater	.\alarm-hide.py	/^	def repeater(self):$/;"	m	class:Alarm
+repeater	.\alarm-withdraw.py	/^	def repeater(self):$/;"	m	class:Alarm
+repeater	.\alarm.py	/^	def repeater(self):$/;"	m	class:Alarm
+report	.\demo-scale-simple.py	/^def report():$/;"	f
+report	.\demoCheck.py	/^	def report(self):$/;"	m	class:Demo
+report	.\demoRadio.py	/^	def report(self):$/;"	m	class:Demo
+report	.\demoScale.py	/^	def report(self):$/;"	m	class:Demo
+root	.\buttonbars.py	/^	root = Tk()$/;"	v
+root	.\buttonpics-func.py	/^root = Tk()$/;"	v
+root	.\canvas-bind.py	/^root = Tk()$/;"	v
+root	.\config-label.py	/^root = Tk()$/;"	v
+root	.\demo-chk-auto.py	/^root = Tk()$/;"	v
+root	.\demo-radio-auto.py	/^root = Tk()$/;"	v
+root	.\demo-scale-simple.py	/^root = Tk()$/;"	v
+root	.\demoAll-frm.py	/^root = Tk()$/;"	v
+root	.\demoAll-prg-multi.py	/^	root = Tk()$/;"	v
+root	.\demoAll-prg.py	/^root = Tk()$/;"	v
+root	.\demoAll-win.py	/^root = Tk()$/;"	v
+root	.\dlg-custom.py	/^root = Tk()$/;"	v
+root	.\entry1.py	/^root = Tk()$/;"	v
+root	.\entry2.py	/^	root = Tk()$/;"	v
+root	.\entry3.py	/^	root = Tk()$/;"	v
+root	.\grid2.py	/^	root = Tk()$/;"	v
+root	.\grid3.py	/^root = Tk()$/;"	v
+root	.\grid5c.py	/^	root = Tk()$/;"	v	class:SumGrid
+root	.\gui2b.py	/^root = Tk()$/;"	v
+root	.\guimaker.py	/^	root = Tk()$/;"	v	class:GuiMakerWindowMenu
+root	.\menu_frm-multi.py	/^root = Tk()$/;"	v
+root	.\menu_frm.py	/^	root = Tk()$/;"	v
+root	.\menu_win.py	/^	root = Tk()$/;"	v
+root	.\optionmenu.py	/^root = Tk()$/;"	v
+root	.\scrolledtext.py	/^	root = Tk()$/;"	v
+root	.\setcolor.py	/^root = Tk()$/;"	v
+root	.\test.PY	/^root = Tk()$/;"	v
+root	.\texttags.py	/^root = Tk()$/;"	v
+root	.\toplevel2.py	/^root = Tk()$/;"	v
+rows	.\grid5.py	/^rows = []$/;"	v
+run	.\launchmodes.py	/^	def run(self, cmdline):$/;"	m	class:Fork
+run	.\launchmodes.py	/^	def run(self, cmdline):$/;"	m	class:LaunchMode
+run	.\launchmodes.py	/^	def run(self, cmdline):$/;"	m	class:Popen
+run	.\launchmodes.py	/^	def run(self, cmdline):$/;"	m	class:Spawn
+run	.\launchmodes.py	/^	def run(self, cmdline):$/;"	m	class:Start
+run	.\launchmodes.py	/^	def run(self, cmdline):$/;"	m	class:StartArgs
+run	.\launchmodes.py	/^	def run(self, cmdline):$/;"	m	class:System
+run	.\launchmodes.py	/^	def run(self, cmdline):$/;"	m	class:Top_level
+runCommand	.\scrolledlist.py	/^	def runCommand(self, selection):$/;"	m	class:ScrolledList
+runDemo	.\demoAll-prg-multi.py	/^def runDemo(modname):$/;"	f
+scl	.\demo-scale-simple.py	/^scl = Scale(root, from_=-100, to=100, tickinterval=50, resolution=10)$/;"	v
+selectOpenFile	.\guimixin.py	/^	def selectOpenFile(self, file='', dir='.'):$/;"	m	class:GuiMixin
+selectSaveFile	.\guimixin.py	/^	def selectSaveFile(self, file='', dir='.'):$/;"	m	class:GuiMixin
+selftest	.\launchmodes.py	/^def selftest():$/;"	f
+setBgColor	.\setcolor.py	/^def setBgColor():$/;"	f
+setMenuBar	.\shellgui.py	/^	def setMenuBar(self):$/;"	m	class:ShellGui
+setToolBar	.\shellgui.py	/^	def setToolBar(self):$/;"	m	class:ShellGui
+settext	.\scrolledtext.py	/^	def settext(self, text='', file=None):$/;"	m	class:ScrolledText
+show	.\scrolledtext.py	/^	def show(event):$/;"	f
+showAllEvent	.\bind.py	/^def showAllEvent(event):$/;"	f
+showPosEvent	.\bind.py	/^def showPosEvent(event):$/;"	f
+showerror	.\dialogTable.py	/^from tkinter.messagebox import askquestion, showerror$/;"	i
+showinfo	.\guimaker.py	/^from tkinter.messagebox import showinfo$/;"	i
+spawn	.\guimixin.py	/^	def spawn(self, pycmdline, wait=False):$/;"	m	class:GuiMixin
+spawnme	.\big_gui.py	/^		def spawnme():$/;"	f	function:Hello.start
+start	.\big_gui.py	/^	def start(self):$/;"	m	class:Hello
+start	.\guimaker.py	/^		def start(self):$/;"	m	class:GuiMakerWindowMenu.TestAppFrameMenu
+start	.\guimaker.py	/^		def start(self):$/;"	m	class:GuiMakerWindowMenu.TestAppWindowMenu
+start	.\guimaker.py	/^		def start(self):$/;"	m	class:GuiMakerWindowMenu.TestAppWindowMenuBasic
+start	.\guimaker.py	/^	def start(self):$/;"	m	class:GuiMaker
+start	.\shellgui.py	/^	def start(self):$/;"	m	class:ShellGui
+state	.\buttonbars.py	/^	def state(self):$/;"	m	class:Checkbar
+state	.\buttonbars.py	/^	def state(self):$/;"	m	class:Radiobar
+state	.\optionmenu.py	/^def state():$/;"	f
+states	.\demo-chk-auto.py	/^states = []$/;"	v
+sys	.\big_gui.py	/^import sys, os$/;"	i
+sys	.\dlg-custom.py	/^import sys$/;"	i
+sys	.\grid5c.py	/^	import sys$/;"	i
+sys	.\gui2b.py	/^import sys$/;"	i
+sys	.\gui3c.py	/^import sys$/;"	i
+sys	.\gui3e.py	/^import sys$/;"	i
+sys	.\guimaker.py	/^import sys$/;"	i
+sys	.\launchmodes.py	/^import os, sys$/;"	i
+sys	.\toplevel0.py	/^import sys$/;"	i
+sys	.\viewer-pil.py	/^import os,sys$/;"	i
+sys	.\viewer-thumbs-fixed.py	/^import sys, math$/;"	i
+sys	.\viewer-thumbs-grid.py	/^import sys, math$/;"	i
+sys	.\viewer_thumbs.py	/^import os, sys, math$/;"	i
+sys	.\viewer_thumbs_scrolled.py	/^import sys, math$/;"	i
+text	.\texttags.py	/^text = Text()$/;"	v
+tgl	.\buttonbars.py	/^	tgl = Checkbar(root, ['All'])$/;"	v
+time	.\canvasDraw_tags.py	/^import canvasDraw, time$/;"	i
+time	.\canvasDraw_tags_thread.py	/^import _thread, time$/;"	i
+tkroot	.\bind.py	/^tkroot = Tk()$/;"	v
+toolBar	.\guimaker.py	/^	toolBar = []$/;"	v	class:GuiMaker
+toolBar	.\guimaker.py	/^	toolBar=[('Quit', sys.exit,{'side':LEFT})]$/;"	v	class:GuiMakerWindowMenu
+tools	.\demoCheck.py	/^	def tools(self):$/;"	m	class:Demo
+trace	.\canvasDraw.py	/^trace = False$/;"	v
+trees	.\toplevel2.py	/^trees =[('The Larch', 'light blue'),$/;"	v
+var	.\demo-chk-auto.py	/^	var = IntVar()$/;"	v
+var	.\demo-radio-auto.py	/^var = IntVar(0)$/;"	v
+var1	.\optionmenu.py	/^var1 = StringVar()$/;"	v
+var2	.\optionmenu.py	/^var2 = StringVar()$/;"	v
+vars	.\entry3.py	/^	vars = makeform(root, fields)$/;"	v
+viewer	.\viewer-thumbs-fixed.py	/^def viewer(imgdir, kind=Toplevel, cols=None):$/;"	f
+viewer	.\viewer-thumbs-grid.py	/^def viewer(imgdir, kind=Toplevel, cols=None):$/;"	f
+viewer	.\viewer_thumbs.py	/^def viewer(imgdir, kind=Toplevel, cols=None):$/;"	f
+viewer	.\viewer_thumbs_scrolled.py	/^def viewer(imgdir, kind=Toplevel, numcols=None, height=300, width=300):$/;"	f
+widget	.\bind.py	/^widget = Label(tkroot, text='Hello bind world')$/;"	v
+widget	.\canvas1.py	/^	widget = Label(canvas, text='Spam', fg='white', bg='black')$/;"	v
+widget	.\config-button.py	/^widget = Button(text='Spam', padx=10, pady=10)$/;"	v
+widget	.\config-label.py	/^widget = Label(root, text='Hello config world')$/;"	v
+widget	.\gui1f.py	/^widget = Label()$/;"	v
+widget	.\gui3e.py	/^widget = Button(None, text='Hello event world')$/;"	v
+win	.\gui4.py	/^win = Frame()$/;"	v
+win	.\toplevel2.py	/^	win = Toplevel(root)$/;"	v
+win	.\viewer-pil.py	/^win = Tk()$/;"	v
+win1	.\toplevel0.py	/^win1 = Toplevel()$/;"	v
+win2	.\toplevel0.py	/^win2 = Toplevel()$/;"	v
+::::::::::::::::::::textpak=>D:/dev/learnpy/gui/alarm-hide.py
+'''alarm-hide.py'''
+from tkinter import *
+import alarm
+
+class Alarm(alarm.Alarm):
+	def __init__(self, msecs=1000):
+		self.shown = False
+		alarm.Alarm.__init__(self,msecs)
+
+	def repeater(self):
+		self.bell()
+		if self.shown:
+			self.stopper.pack_forget()
+		else:
+			self.stopper.pack()
+		self.shown = not self.shown
+		self.after(self.msecs, self.repeater)
+
+if __name__ == '__main__':
+	Alarm(msecs=500).mainloop()
+::::::::::::::::::::textpak=>D:/dev/learnpy/gui/alarm.py
+'''alarm.py'''
+from tkinter import *
+
+class Alarm(Frame):
+	def __init__(self, msecs=1000):
+		Frame.__init__(self)
+		self.msecs = msecs
+		self.pack()
+		stopper = Button(self, text='Stop the beeps!', command=self.quit)
+		stopper.pack()
+		stopper.config(bg='navy', fg='white', bd=8)
+		self.stopper = stopper
+		self.repeater()
+
+	def repeater(self):
+		self.bell()
+		self.stopper.flash()
+		self.after(self.msecs, self.repeater)
+
+if __name__ == '__main__':
+	Alarm(msecs=1000).mainloop()
