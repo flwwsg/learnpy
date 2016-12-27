@@ -61,6 +61,7 @@ def server(host, port):
 def main(args):
 	host = args.get('-host', defaultHost)
 	port = args.get('-port', defaultPort)
+	port = int(port)
 	if args.get('-mode') == 'server':
 		if host == 'localhost': host = ''
 		server(host, port)

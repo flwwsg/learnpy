@@ -1,4 +1,4 @@
-'''alarm.py'''
+#!/usr/bin/python3
 from tkinter import *
 
 class Alarm(Frame):

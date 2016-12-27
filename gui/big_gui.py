@@ -1,4 +1,4 @@
-'''big_gui.py'''
+#!/usr/bin/python3
 import sys, os
 from tkinter import *
 from guimixin import *
