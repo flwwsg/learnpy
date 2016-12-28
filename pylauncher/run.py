@@ -6,12 +6,12 @@ from code.buttons import *
 from code.dialogs import FileDlg
 from code.buttons import OpenFile
 
-CONFIG = './config.txt'
+CONFIG = os.path.abspath('./config.txt')
 def addProgram():
-	newprogram = QuietPopuWindow('new program')
-	labels = [('file name',None,None),
-			  ('file location','OpenFile',OpenFile)]
-	FileDlg(labels,newprogram, Root)
+	newprogram = QuietPopuWindow('新增程序')
+	labels = [('新程序名称',None,None),
+			  ('新程序路径','浏览文件...',OpenFile)]
+	FileDlg(labels,newprogram, Root, CONFIG)
 
 def makeEntries():
 	lines = open(CONFIG, encoding='utf-8').readlines()
@@ -24,7 +24,7 @@ def makeEntries():
 		fpath = fpath.lstrip()
 		AddEntry(fname, fname, fpath, Root)
 
-Root = MainWindow('Test demo')
+Root = MainWindow('简易启动菜单')
 makeEntries()
 NewProgram(parent=Root, command=addProgram)
 Quitter(Root)

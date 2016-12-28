@@ -48,10 +48,11 @@ class DynamicForm(Form):
 		self.onCancel()
 
 class FileDlg(Form):
-	def __init__(self, labels, parent, root):
+	def __init__(self, labels, parent, root, config):
 		Form.__init__(self, labels, parent)
 		self.root = root
 		self.labels = labels
+		self.config = config
 
 	def onSubmit(self):
 		for item in self.labels:
@@ -64,7 +65,8 @@ class FileDlg(Form):
 				fpath = os.path.abspath(fpath)
 		
 		AddEntry(fname, fname, fpath, self.root )
-		with open('./config.txt', 'a', encoding='utf-8') as fs:
+
+		with open(self.config, 'a', encoding='utf-8') as fs:
 			fs.write('\n'+fname+'='+fpath)
 		self.onCancel()
 		
