@@ -51,10 +51,3 @@ class FileDlg(Form):
 				fpath = os.path.abspath(fpath)
 
 		return fname, fpath
-		
-		# AddEntry(fname, fname, fpath, self.root )
-
-		# with open(self.config, 'a', encoding='utf-8') as fs:
-		# 	fs.write('\n'+fname+'='+fpath)
-		# self.onCancel()
-		

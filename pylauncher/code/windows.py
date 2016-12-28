@@ -49,3 +49,4 @@ class ComponentWindow(Frame):
 
 	def quit(self):
 		showinfo('Quit', 'Not supported in attachment mode')
+		
