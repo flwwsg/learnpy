@@ -1,3 +1,4 @@
 合并客户端=D:\pathsofgloryclient\bin\www\newmedia\data\temp\glory2\MergeXML.py
 合并服务端=D:\pathsofgloryclient\compiled\common\config\MergeXML.py
 run=/home/kwdj/dev/learnpy/pylauncher/run.py
+test=/home/kwdj/dev/learnpy/pylauncher/run.py

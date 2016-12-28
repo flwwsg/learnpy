@@ -23,8 +23,8 @@ class ScrolledList(Frame):
 		for label in options:
 			list.insert(pos, label)
 			pos += 1
-		# list.config(selectmode=SINGLE, setgrid=1)
-		list.bind('<Double-1>', self.handleList)
+		list.config(selectmode=BROWSE, setgrid=1)
+		# list.bind('<Double-1>', self.handleList)
 		self.listbox = list
 
 	def runCommand(self, selection):

@@ -1,5 +1,4 @@
 from tkinter import *
-from code.buttons import AddEntry
 import os
 
 entrysize = 40
@@ -27,8 +26,6 @@ class Form:
 			if button:
 				btn = command(var, button, row)
 			self.content[label] = entry
-		Button(box, text='Cancel', command=self.onCancel).pack(side=RIGHT)
-		Button(box, text='Submit', command=self.onSubmit).pack(side=RIGHT)
 		box.master.bind('<Return>', lambda event: self.onSubmit())
 
 	def onSubmit(self):
@@ -37,22 +34,11 @@ class Form:
 	def onCancel(self):
 		self.parent.quit()
 
-class DynamicForm(Form):
-	def __init__(self, labels=None):
-		labels = input('Enter field names: ').split()
-		Form.__init__(self, labels)		
-
-	def onSubmit(self):
-		print('Field values ...')
-		Form.onSubmit(self)
-		self.onCancel()
-
 class FileDlg(Form):
-	def __init__(self, labels, parent, root, config):
+	def __init__(self, labels, parent):
 		Form.__init__(self, labels, parent)
-		self.root = root
+		self.root = parent
 		self.labels = labels
-		self.config = config
 
 	def onSubmit(self):
 		for item in self.labels:
@@ -63,10 +49,12 @@ class FileDlg(Form):
 			else:
 				fpath = self.content[label].get()
 				fpath = os.path.abspath(fpath)
-		
-		AddEntry(fname, fname, fpath, self.root )
 
-		with open(self.config, 'a', encoding='utf-8') as fs:
-			fs.write('\n'+fname+'='+fpath)
-		self.onCancel()
+		return fname, fpath
+		
+		# AddEntry(fname, fname, fpath, self.root )
+
+		# with open(self.config, 'a', encoding='utf-8') as fs:
+		# 	fs.write('\n'+fname+'='+fpath)
+		# self.onCancel()
 		
