@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter.filedialog import askopenfilename
-from launchmodes import QuietPortableLauncher
+from code.launchmodes import QuietPortableLauncher
 
 
 class CustomBtn(Frame):

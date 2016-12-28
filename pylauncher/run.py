@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 #-*-code:UTF-8-*-
-from windows import MainWindow, QuietPopuWindow, PopupWindow
-from buttons import *
 from tkinter import *
-from dialogs import FileDlg
-from buttons import OpenFile
+from code.windows import MainWindow, QuietPopuWindow, PopupWindow
+from code.buttons import *
+from code.dialogs import FileDlg
+from code.buttons import OpenFile
 
 CONFIG = './config.txt'
 def addProgram():

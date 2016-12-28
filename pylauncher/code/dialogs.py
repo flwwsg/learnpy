@@ -1,5 +1,5 @@
 from tkinter import *
-from buttons import AddEntry
+from code.buttons import AddEntry
 import os
 
 entrysize = 40
