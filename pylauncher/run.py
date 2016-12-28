@@ -13,6 +13,9 @@ def addProgram():
 			  ('新程序路径','浏览文件...',OpenFile)]
 	FileDlg(labels,newprogram, Root, CONFIG)
 
+def editProgram():
+	PopupWindow('editor')
+
 def makeEntries():
 	lines = open(CONFIG, encoding='utf-8').readlines()
 	for line in lines:
@@ -27,6 +30,7 @@ def makeEntries():
 Root = MainWindow('简易启动菜单')
 makeEntries()
 NewProgram(parent=Root, command=addProgram)
+EditProgram(parent=Root, command=editProgram)
 Quitter(Root)
 
 Root.mainloop()

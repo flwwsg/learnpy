@@ -20,18 +20,13 @@ class NewProgram(CustomBtn):
 	def __init__(self, command ,parent=None, sideonparent=TOP):
 		CustomBtn.__init__(self, '新程序', command, parent, sideonparent)
 
+class EditProgram(CustomBtn):
+	def __init__(self, command ,parent=None, sideonparent=TOP):
+		CustomBtn.__init__(self, 'edit program', command, parent, sideonparent)
+
 class AddEntry(CustomBtn):
 	def __init__(self, name, label, doit, parent=None,sideonparent=TOP):
-		CustomBtn.__init__(self, name, lambda: self.command(label, doit), parent, sideonparent)
-
-	def command(self, label, doit):
-		os.chdir(os.path.dirname(doit))
-		if sys.platform[:3] == 'win':
-			# Start(label,doit)
-			os.startfile(doit)
-		else:
-			print('Portable')
-			QuietPortableLauncher(label, doit);
+		CustomBtn.__init__(self, name, QuietPortableLauncher(label, doit), parent, sideonparent)
 
 class OpenFile(CustomBtn):
 	def __init__(self, var, name='OpenFile', parent=None, sideonparent=RIGHT):
