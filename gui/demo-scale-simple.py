@@ -1,4 +1,4 @@
-'''demo-scale-simple.py'''
+#!/usr/bin/python3
 from tkinter import *
 root = Tk()
 scl = Scale(root, from_=-100, to=100, tickinterval=50, resolution=10)

@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import os, sys
 
-pyfile = (sys.platform[:3] == 'win' and 'py -3') or 'python3'
+pyfile = (sys.platform[:3] == 'win' and 'python') or 'python3'
 pypath = sys.executable 
 
 def fixWindwsPath(cmdline):

@@ -1,4 +1,4 @@
-'''demo-radio-auto.py'''
+#!/usr/bin/python3
 from tkinter import *
 root = Tk()
 var = IntVar(0)

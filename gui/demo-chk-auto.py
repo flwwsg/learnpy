@@ -1,5 +1,4 @@
-'''demo-chk-auto.py'''
-
+#!/usr/bin/python3
 from tkinter import *
 root = Tk()
 states = []
