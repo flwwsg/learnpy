@@ -12,11 +12,13 @@ path = os.path.join(path, 'config.txt')
 CONFIG = path
 
 def getLabels():
-	lines = open(CONFIG, encoding='utf-8').readlines()
 	labels = dict()
 	klist = list()
+	if not os.path.exists(CONFIG):
+		return labels, klist
+	lines = open(CONFIG, encoding='utf-8').readlines()
 	for line in lines:
-		line = line.lstrip().rstrip()
+		line = line.strip()
 		if not line:
 			continue
 		fname, fpath = line.split('=')
@@ -103,7 +105,8 @@ def deline(slist):
 	slist.listbox.delete(length-1,last=None)
 
 def saveAll(slist,dicts):
-	os.remove(CONFIG)
+	if os.path.exists(CONFIG):
+		os.remove(CONFIG)
 	fs = open(CONFIG,'w', encoding='utf-8')
 	for index in range(slist.listbox.size()):
 		label = slist.listbox.get(index)
