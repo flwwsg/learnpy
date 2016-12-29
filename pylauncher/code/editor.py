@@ -113,6 +113,8 @@ def saveAll(slist,dicts):
 	
 
 def makeEntries(root):
+	if not os.path.exists(CONFIG):
+		return False
 	lines = open(CONFIG, encoding='utf-8').readlines()
 	for line in lines:
 		line = line.lstrip().rstrip()

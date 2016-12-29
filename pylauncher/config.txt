@@ -1,4 +1,0 @@
-run=C:\dev\learnpy\pylauncher\run.py
-python2=C:\Python27\python.exe
-qq=C:\Program Files (x86)\Tencent\QQ\Bin\QQ.exe
-menu=C:\dev\learnpy\pylauncher\config.txt
