@@ -9,3 +9,9 @@ class LauncherExcept(Except):
 
 	def info(self):
 		showinfo(self.title, self.info)
+
+class WrongFilePathExcept(LauncherExcept):
+	def __init__(self, arg):
+		super(WrongFilePathExcept, self).__init__()
+		self.arg = arg
+		
