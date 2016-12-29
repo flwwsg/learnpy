@@ -22,7 +22,7 @@ class NewProgram(CustomBtn):
 
 class EditProgram(CustomBtn):
 	def __init__(self, command ,parent=None, sideonparent=TOP):
-		CustomBtn.__init__(self, 'edit program', command, parent, sideonparent)
+		CustomBtn.__init__(self, '编辑菜单', command, parent, sideonparent)
 
 class AddEntry(CustomBtn):
 	def __init__(self, name, label, doit, parent=None,sideonparent=TOP):
