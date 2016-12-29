@@ -1,1 +1,1 @@
-run=/home/kwdj/dev/learnpy/pylauncher/run.py
+run=D:\dev\learnpy\pylauncher\run.py

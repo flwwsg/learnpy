@@ -6,6 +6,7 @@ from code.buttons import *
 from code.windows import MainWindow, QuietPopuWindow, PopupWindow, showinfo
 from code.dialogs import FileDlg
 from code.scrolledlist import ScrolledList
+from code.launcherexcept import *
 
 path = os.getcwd()
 path = os.path.join(path, 'config.txt')
@@ -44,14 +45,15 @@ def editProgram():
 	CustomBtn('Add', lambda: addNewFile(slist, fdlg,dicts) ,btnroot)
 	CustomBtn('Up', lambda: moveUpline(slist) ,btnroot)
 	CustomBtn('Down', lambda:moveDownline(slist) ,btnroot)
-	CustomBtn('Del', lambda:deline(slist) ,btnroot)
+	CustomBtn('Del', lambda:deline(slist, dicts) ,btnroot)
 	CustomBtn('SaveAll', lambda:saveAll(slist,dicts) ,btnroot)
 
 def addNewFile(slist, fdlg, dicts):
 	fname, fpath = fdlg.onSubmit()
 	if not fname or not fpath:
-		showinfo('请输入新程序名称及路径','请输入新程序名称及路径')
+		showinfo('没有输入','请输入新程序名称及路径')
 		return False
+
 	if not os.path.exists(fpath):
 		showinfo('请输入正确路径','请输入正确路径')
 		return False
@@ -78,6 +80,7 @@ def moveUpline(slist):
 	slist.listbox.insert(index-1, tmp2)
 	slist.listbox.delete(index)
 	slist.listbox.insert(index, tmp)
+	slist.listbox.selection_set(index-1)
 
 def moveDownline(slist):
 	index = chkSelected(slist)
@@ -85,24 +88,27 @@ def moveDownline(slist):
 	if index == -1 or index == length-1:
 		return False
 
-	tmp = slist.listbox.get(index1)
+	tmp = slist.listbox.get(index+1)
 	tmp2 = slist.listbox.get(index)
 
-	slist.listbox.delete(index1)
-	slist.listbox.insert(index1, tmp2)
+	slist.listbox.delete(index+1)
+	slist.listbox.insert(index+1, tmp2)
 	slist.listbox.delete(index)
 	slist.listbox.insert(index, tmp)
+	slist.listbox.selection_set(index+1)
 
-def deline(slist):
+def deline(slist, dicts):
 	index = chkSelected(slist) 
 	if index == -1:
 		return False
 	length = slist.listbox.size()
+	key = slist.listbox.get(index)
 	for i in range(index, length-1):
-		nextlabel = slist.listbox.get(i)
+		nextlabel = slist.listbox.get(i+1)
 		slist.listbox.delete(i)
 		slist.listbox.insert(i, nextlabel)
 	slist.listbox.delete(length-1,last=None)
+	del dicts[key]
 
 def saveAll(slist,dicts):
 	if os.path.exists(CONFIG):
@@ -112,7 +118,7 @@ def saveAll(slist,dicts):
 		label = slist.listbox.get(index)
 		fs.write(label+'='+dicts[label]+'\n')
 	fs.close()
-	showinfo('保存成功','保存成功')
+	showinfo('保存成功', '菜单保存成功')
 	
 
 def makeEntries(root):
