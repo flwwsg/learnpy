@@ -29,50 +29,46 @@ def getLabels():
 		klist.append(fname)
 	return labels, klist
 
-def addProgram(root):
+@EditorWrapper
+def addProgram(root, dicts):
 	labels = [('新程序名称',None,None),
 			  ('新程序路径','浏览文件...',OpenFile)]
-	fdlg = FileDlg(labels,root)
+	fdlg = FileDlg(labels,root,dicts)
 	return fdlg
 
 def editProgram():
 	dicts,labels = getLabels()
 	root = PopupWindow('editor')
-	fdlg = addProgram(root)
+	fdlg = addProgram(root, dicts)
 	btnroot = Frame(root)
 	btnroot.pack(side=RIGHT)
 	slist = ScrolledList(labels,root)
+	slist.listbox.selection_set(0)
 	CustomBtn('Add', lambda: addNewFile(slist, fdlg,dicts) ,btnroot)
 	CustomBtn('Up', lambda: moveUpline(slist) ,btnroot)
 	CustomBtn('Down', lambda:moveDownline(slist) ,btnroot)
 	CustomBtn('Del', lambda:deline(slist, dicts) ,btnroot)
 	CustomBtn('SaveAll', lambda:saveAll(slist,dicts) ,btnroot)
 
+@EditorWrapper
 def addNewFile(slist, fdlg, dicts):
 	fname, fpath = fdlg.onSubmit()
-	if not fname or not fpath:
-		showinfo('没有输入','请输入新程序名称及路径')
-		return False
-
-	if not os.path.exists(fpath):
-		showinfo('请输入正确路径','请输入正确路径')
-		return False
-	if fname in dicts.keys():
-		showinfo('重复程序！','重复程序！')
-		return False
 	slist.listbox.insert(END, fname)
 	dicts[fname] = fpath
 
+@EditorWrapper
 def chkSelected(slist):
 	index = slist.listbox.curselection()
 	if not index:
-		return -1
+		raise SelectedNoneExcept()
 	return index[0]
 
+@EditorWrapper
 def moveUpline(slist):
 	index = chkSelected(slist) 
-	if index == -1 or index == 0:
-		return False
+	if index == 0:
+		raise TouchHeadExcept()
+
 	tmp = slist.listbox.get(index-1)
 	tmp2 = slist.listbox.get(index)
 
@@ -82,11 +78,12 @@ def moveUpline(slist):
 	slist.listbox.insert(index, tmp)
 	slist.listbox.selection_set(index-1)
 
+@EditorWrapper
 def moveDownline(slist):
 	index = chkSelected(slist)
 	length = slist.listbox.size()
-	if index == -1 or index == length-1:
-		return False
+	if index == length-1:
+		raise ReachTailExcept()
 
 	tmp = slist.listbox.get(index+1)
 	tmp2 = slist.listbox.get(index)
@@ -99,8 +96,6 @@ def moveDownline(slist):
 
 def deline(slist, dicts):
 	index = chkSelected(slist) 
-	if index == -1:
-		return False
 	length = slist.listbox.size()
 	key = slist.listbox.get(index)
 	for i in range(index, length-1):
@@ -110,6 +105,7 @@ def deline(slist, dicts):
 	slist.listbox.delete(length-1,last=None)
 	del dicts[key]
 
+@EditorWrapper
 def saveAll(slist,dicts):
 	if os.path.exists(CONFIG):
 		os.remove(CONFIG)
@@ -118,7 +114,7 @@ def saveAll(slist,dicts):
 		label = slist.listbox.get(index)
 		fs.write(label+'='+dicts[label]+'\n')
 	fs.close()
-	showinfo('保存成功', '菜单保存成功')
+	raise SaveFileExcept()
 	
 
 def makeEntries(root):

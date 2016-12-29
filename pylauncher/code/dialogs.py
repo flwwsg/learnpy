@@ -1,4 +1,5 @@
 from tkinter import *
+from code.launcherexcept import *
 import os
 
 entrysize = 40
@@ -35,10 +36,11 @@ class Form:
 		self.parent.quit()
 
 class FileDlg(Form):
-	def __init__(self, labels, parent):
+	def __init__(self, labels, parent,dicts):
 		Form.__init__(self, labels, parent)
 		self.root = parent
 		self.labels = labels
+		self.dicts = dicts
 
 	def onSubmit(self):
 		for item in self.labels:
@@ -49,5 +51,14 @@ class FileDlg(Form):
 			else:
 				fpath = self.content[label].get()
 				fpath = os.path.abspath(fpath)
+
+		if not fname or not fpath:
+			raise EmptyFileExcept()
+
+		if not os.path.exists(fpath):
+			raise WrongFilePathExcept()
+
+		if fname in self.dicts.keys():
+			raise DulptyFileExcept()
 
 		return fname, fpath

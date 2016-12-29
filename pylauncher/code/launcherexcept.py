@@ -34,4 +34,19 @@ class ReachTailExcept(LauncherExcept):
 	def __init__(self):
 		LauncherExcept.__init__(self, '不能再移', '已经在最后位')
 
+class SelectedNoneExcept(LauncherExcept):
+	def __init__(self):
+		LauncherExcept.__init__(self, '未选中', '请选择需要删除的程序名')
+		
+		
+class EditorWrapper(object):
+	def __init__(self, function):
+		self.function = function
+
+	def __call__(self, *args):
+		try:
+			return self.function(*args)
+		except LauncherExcept as e:
+			e.popinfo()
+		
 		
