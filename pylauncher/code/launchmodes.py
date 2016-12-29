@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import os, sys
 
-pyfile = (sys.platform[:3] == 'win' and 'py -3') or 'python3'
+pyfile = (sys.platform[:3] == 'win' and 'python') or 'python3'
 pypath = sys.executable 
 
 def fixWindwsPath(cmdline):
@@ -16,6 +16,7 @@ class LaunchMode:
 
 	def __call__(self):
 		self.announce(self.what)
+		os.chdir(os.path.dirname(self.where))
 		self.run(self.where)
 
 	def announce(self, text):
@@ -61,7 +62,7 @@ class Top_level(LaunchMode):
 		assert False, 'mod not yet implemented'
 
 if sys.platform[:3] == 'win':
-	PortableLauncher = Spawn
+	PortableLauncher = Start
 else:
 	PortableLauncher = Fork
 

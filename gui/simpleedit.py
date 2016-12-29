@@ -1,4 +1,4 @@
-'''simpleedit.py'''
+#!/usr/bin/python3
 from tkinter import *
 from tkinter.simpledialog import askstring
 from tkinter.filedialog import asksaveasfilename

@@ -1,4 +1,4 @@
-'''demoAll-win.py'''
+#!/usr/bin/python3
 from tkinter import *
 demoModules = ['demoDlg', 'demoRadio', 'demoCheck', 'demoScale']
 

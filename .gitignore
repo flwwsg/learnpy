@@ -1,5 +1,6 @@
 __pycache__/
-.tag*
+.tags*
 block*
 images/
 gifs/
+pylauncher/config.txt

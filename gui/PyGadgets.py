@@ -1,5 +1,4 @@
-'''PyGadgets.py'''
-
+#!/usr/bin/python3
 import sys, time, os, time
 from tkinter import *
 from launchmodes import PortableLauncher
@@ -27,7 +26,7 @@ def runLauncher(mytools):
 mytools = [
 	('PyEdit', 'textEditor.py'),
 	('PyCalc', 'calculator.py'),
-	('PyMail', 'Internet/PyMailGui.py')
+	('PyMail', '../Internet/PyMailGui.py')
 ]
 
 if __name__ == '__main__':

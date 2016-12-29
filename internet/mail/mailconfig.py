@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 
+MYEMAIL = '1150712418@qq.com'
 popservername = 'pop.qq.com'
-popusername = '1150712418@qq.com'
+popusername = MYEMAIL
 popport = 995
 
-smtservername = 'smtp.qq.com'
+smtpservername = 'smtp.qq.com'
 smtport = 465
 
-myaddress = '1150712418@qq.com'
+myaddress = MYEMAIL
 mysignature = ('Thanks, \n--LBlue')
 
 # yarqzodyzfakggja
