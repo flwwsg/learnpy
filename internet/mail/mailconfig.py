@@ -4,7 +4,7 @@ popservername = 'pop.qq.com'
 popusername = '1150712418@qq.com'
 popport = 995
 
-smtservername = 'smtp.qq.com'
+smtpservername = 'smtp.qq.com'
 smtport = 465
 
 myaddress = '1150712418@qq.com'
