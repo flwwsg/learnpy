@@ -7,9 +7,11 @@ popport = 995
 
 smtpservername = 'smtp.qq.com'
 smtport = 465
+smtpusername = MYEMAIL
 
 myaddress = MYEMAIL
 mysignature = ('Thanks, \n--LBlue')
+mypassword = 'yarqzodyzfakggja'
 
 # yarqzodyzfakggja
 pwdfile = './password.txt'
