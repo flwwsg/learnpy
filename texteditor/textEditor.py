@@ -34,7 +34,7 @@ class TextEditor:
 			savesUseKnownEncoding, savesAskUser, savesEncoding
 			)
 	else:
-		from .textConfig import(
+		from textConfig import(
 			opensAskUser, opensEncoding,
 			savesUseKnownEncoding, savesAskUser, savesEncoding
 			)
