@@ -10,6 +10,7 @@ smtport = 465
 smtpusername = MYEMAIL
 
 myaddress = MYEMAIL
+recevieaddr = '2319406132@qq.com'
 mysignature = ('Thanks, \n--LBlue')
 mypassword = 'yarqzodyzfakggja'
 

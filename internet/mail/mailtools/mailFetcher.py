@@ -1,8 +1,8 @@
-import poplib, .mailconfig, sys
+import poplib, mailconfig, sys
 
 print('user:', mailconfig.popusername)
-from .mailParser import MailParser
-from .mailTool import MailTool, SilentMailTool
+from mailParser import MailParser
+from mailTool import MailTool, SilentMailTool
 
 class DeleteSynchError(Exception):
 	pass
