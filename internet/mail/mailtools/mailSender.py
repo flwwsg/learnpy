@@ -1,7 +1,7 @@
-import .mailconfig
-import smptlib, os, mimetypes
+import mailconfig
+import smtplib, os, mimetypes
 import email.utils, email.encoders
-from .mailTool import MailTool, SilentMailTool
+from mailTool import MailTool, SilentMailTool
 
 from email.message import Message
 from email.mime.multipart import MIMEMultipart
@@ -120,7 +120,7 @@ class MailSender(MailTool):
 				else:
 					data = open(filename, 'rb')
 				msg = MIMEText(data.read(), _subtype=subtype, _charset=fileencode)
-				data..close()
+				data.close()
 			elif maintype == 'image':
 				data = open(filename, 'rb')
 				msg = MIMEImage(data.read(), _subtype=subtype, 
