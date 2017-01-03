@@ -9,19 +9,19 @@ class FileVisitor(object):
 	def run(self, startdir=os.curdir, reset=True):
 		if reset: self.reset()
 		for (thisDir, dirsHere, filesHere) in os.walk(startdir):
-			self.visidir(thisDir)
+			self.visitdir(thisDir)
 			for fname in filesHere:
 				fpath = os.path.join(thisDir, fname)
-				self.visifile(fpath)
+				self.visitfile(fpath)
 
 	def reset(self):
 		self.fcount = self.dcount = 0
 
-	def visidir(self, dirpath):
+	def visitdir(self, dirpath):
 		self.dcount += 1
 		if self.trace > 0: print(dirpath, '...')
 
-	def visifile(self, filepath):
+	def visitfile(self, filepath):
 		self.fcount += 1
 		if self.trace > 1: print(self.fcount, '=>', filepath)
 
@@ -42,8 +42,8 @@ class SearchVisitor(FileVisitor):
 		else:
 			return ext not in self.skipexts
 
-	def visifile(self, fname):
-		FileVisitor.visifile(self,fname)
+	def visitfile(self, fname):
+		FileVisitor.visitfile(self,fname)
 		if not self.candidate(fname):
 			if self.trace > 0: print('Skipping', fname)
 		else:

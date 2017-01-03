@@ -11,9 +11,9 @@ def searcher(startdir, searchkey):
 	for (thisDir, dirsHere, filesHere) in os.walk(startdir):
 		for fname in filesHere:
 			fpath = os.path.join(thisDir, fname)
-			visifile(fpath, searchkey)
+			visitfile(fpath, searchkey)
 
-def visifile(fpath, searchkey):
+def visitfile(fpath, searchkey):
 	global fcount, vcount
 	print(vcount+1,'=>', fpath)
 	try:
