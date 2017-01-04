@@ -8,6 +8,7 @@ popport = 995
 smtpservername = 'smtp.qq.com'
 smtport = 465
 smtpusername = MYEMAIL
+smtpuser = MYEMAIL
 
 myaddress = MYEMAIL
 recevieaddr = '2319406132@qq.com'

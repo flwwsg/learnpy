@@ -8,7 +8,7 @@ from mailTool import MailTool
 
 class MailParser(MailTool):
 
-	def walkNameParts(self, message):
+	def walkNamedParts(self, message):
 		for (ix, part) in enumerate(message.walk()):
 			fulltype = part.get_content_type()
 			maintype = part.get_content_maintype()
@@ -33,13 +33,13 @@ class MailParser(MailTool):
 				if not ext:
 					ext = '.bin'
 				filename = 'part-%03d%s' % (ix, ext)
-		return (filename, contype)
+		return (self.decodeHeader(filename), contype)
 
 	def saveParts(self, savedir, message):
 		if not os.path.exists(savedir):
 			os.mkdir(savedir)
 		partfiles = []
-		for (filename, contype, part) in self.walkNameParts(message):
+		for (filename, contype, part) in self.walkNamedParts(message):
 			fullname = os.path.join(savedir, filename)
 			fileobj = open(fullname, 'wb')
 			content = part.get_payload(decode=1)
@@ -62,11 +62,11 @@ class MailParser(MailTool):
 		return (contype, fullname)
 
 	def partsList(self, message):
-		validParts = self.walkNameParts(message)
+		validParts = self.walkNamedParts(message)
 		return [filename for (filename, contype, part) in validParts]
 
 	def findOnePart(self, partname, message):
-		for (filename, contype, part) in self.walkNameParts(message):
+		for (filename, contype, part) in self.walkNamedParts(message):
 			if filename == partname:
 				content = part.get_payload(decode=1)
 
@@ -80,7 +80,7 @@ class MailParser(MailTool):
 			if enchdr:
 				tries += [enchdr]
 			tries += [sys.getdefaultencoding()]
-			tries += ['utf8', 'latin1']
+			tries += ['gbk', 'utf8']
 			for trie in tries:
 				try:
 					payload = payload.decode(trie)
@@ -96,6 +96,7 @@ class MailParser(MailTool):
 			type = part.get_content_type()
 			if type == 'text/plain':
 				return type, self.decodedPayload(part, asStr)
+				
 		for part in message.walk():
 			type = part.get_content_type()
 			if type == 'text/html':

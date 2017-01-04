@@ -18,7 +18,7 @@ class MailFether(MailTool):
 		self.popServer = popserver or mailconfig.popservername
 		self.popUser = popuser or mailconfig.popusername
 		self.popPassword = poppswd
-		self.srvHasTop = hastop
+		self.srvrHasTop = hastop
 
 	def connect(self):
 		self.trace('Connecting...')
@@ -34,7 +34,7 @@ class MailFether(MailTool):
 	def decodeFullText(self, messageBytes):
 		text = None
 		kinds = [self.fetchEncoding]
-		kinds += ['ascii', 'utf8']
+		kinds += ['ascii', 'gbk', 'utf8']
 		kinds += [sys.getdefaultencoding()]
 
 		for kind in kinds:
@@ -47,7 +47,7 @@ class MailFether(MailTool):
 		if text == None:
 			blankline = messageBytes.index(b'')
 			hdrsonly = messageBytes[:blankline]
-			commons = ['ascii', 'latin1', 'utf8', 'gbk']
+			commons = ['ascii', 'utf8', 'gbk']
 			for common in commons:
 				try:
 					text = [line.decode(common) for line in hdrsonly]
@@ -69,12 +69,12 @@ class MailFether(MailTool):
 			resp, msglines, respsz = server.retr(msgnum)
 		finally:
 			server.quit()
-			msglines = self.decodeFullText(msglines)
 
+		msglines = self.decodeFullText(msglines)
 		return  '\n'.join(msglines)
 
 	def downloadAllHeaders(self, progress=None, loadfrom=1):
-		if not self.srvHasTop:
+		if not self.srvrHasTop:
 			return self.downloadAllMessages(progress, loadfrom)
 		else:
 			self.trace('loading headers')
@@ -125,18 +125,18 @@ class MailFether(MailTool):
 		assert len(allmsgs) == (msgCount - loadfrom) + 1
 		return allmsgs, allsizes, True
 
-	def deleteMessages(self, msgnum, progress=None):
+	def deleteMessages(self, msgnums, progress=None):
 		self.trace('deleting mails')
 		server = self.connect()
 		try:
-			for (ix, msgnum) in enumerate(msgnum):
-				if progress: progress(ix+1, len(msgnum))
+			for (ix, msgnum) in enumerate(msgnums):
+				if progress: progress(ix+1, len(msgnums))
 				server.dele(msgnum)
 		finally:
 			server.quit()
 
-	def deleteMessagesSafely(self, msgnum, synchHeaders, progress=None):
-		if not self.srvHasTop:
+	def deleteMessagesSafely(self, msgnums, synchHeaders, progress=None):
+		if not self.srvrHasTop:
 			raise TopNotSupported('Safe delete cancelled')
 		self.trace('deleting mails safely')
 		errmsg = 'Message %s out of synch with server.\n'
@@ -146,8 +146,8 @@ class MailFether(MailTool):
 		server = self.connect()
 		try:
 			(msgCount, msgBytes) = server.stat()
-			for (ix, msgnum) in enumerate(msgnum):
-				if progress: progress(ix+1, len(msgnum))
+			for (ix, msgnum) in enumerate(msgnums):
+				if progress: progress(ix+1, len(msgnums))
 				if msgnum > msgCount:
 					raise DeleteSynchError(errmsg % msgnum)
 				resp, hdrlines, respsz = server.top(msgnum, 0)
@@ -171,7 +171,7 @@ class MailFether(MailTool):
 			msgCount, msgBytes = server.stat()
 			if lastmsgnum > msgCount:
 				raise MessageSynchError(errmsg)
-			if self.srvHasTop:
+			if self.srvrHasTop:
 				resp, hdrlines, respsz = server.top(lastmsgnum, 0)
 				hdrlines = self.decodeFullText(hdrlines)
 				lastmsghdrs = '\n'.join(hdrlines)
