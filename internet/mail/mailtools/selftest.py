@@ -1,16 +1,20 @@
 #!/usr/bin/python3
 import sys
 import mailconfig
+sys.path.append('..')
 print('config:', mailconfig.__file__)
 
-from mailFetcher import MailFetcherConsole
-from mailParser import MailParser
-from mailSender import MailSender, MailSenderAuthConsole
+# from mailFetcher import MailFetcherConsole
+# from mailParser import MailParser
+# from mailSender import MailSender, MailSenderAuthConsole
+from mailtools import (MailFetcherConsole, 
+                       MailSender, MailSenderAuthConsole, 
+                       MailParser)
 
 if not mailconfig.smtpusername:
-	sender = MailSender(tracesize=5000)
+	sender = MailSender()
 else:
-	sender = MailSenderAuthConsole(tracesize=5000)
+	sender = MailSenderAuthConsole()
 
 sender.sendMessage(From 	 = mailconfig.myaddress,
 				   To		 = [mailconfig.recevieaddr],
@@ -21,8 +25,7 @@ sender.sendMessage(From 	 = mailconfig.myaddress,
 				)
 
 fetcher = MailFetcherConsole()
-def status(*args):
-	print(args)
+def status(*args): print(args)
 
 hdrs, sizes, loadedall = fetcher.downloadAllHeaders(status)
 for num, hdr in enumerate(hdrs[:5]):
@@ -42,5 +45,3 @@ for i in [0]:
 	ctype, maintext = parser.findMainText(message)
 	print('Parsed:', message['Subject'])
 	print(maintext)
-
-

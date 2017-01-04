@@ -8,6 +8,7 @@ popport = 995
 smtpservername = 'smtp.qq.com'
 smtport = 465
 smtpusername = MYEMAIL
+smtpuser = MYEMAIL
 
 myaddress = MYEMAIL
 recevieaddr = '2319406132@qq.com'
@@ -18,11 +19,10 @@ mypassword = 'yarqzodyzfakggja'
 pwdfile = './password.txt'
 smtppasswdfile = pwdfile
 poppasswdfile = pwdfile
-sentmailfile = './mailconfig.py'
+sentmailfile = './send.txt'
 savemailfile = './savemail.txt'
 
 fetchEncoding = 'utf8'
 headersEncodeTo = None
 
 fetchlimit = 25
-

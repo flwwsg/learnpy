@@ -3,12 +3,12 @@ import smtplib, os, mimetypes
 import email.utils, email.encoders
 from mailTool import MailTool, SilentMailTool
 
-from email.message import Message
-from email.mime.multipart import MIMEMultipart
-from email.mime.audio import MIMEAudio
-from email.mime.image import MIMEImage
-from email.mime.text import MIMEText
-from email.mime.base import MIMEBase
+from email.message 			import Message
+from email.mime.multipart 	import MIMEMultipart
+from email.mime.audio 		import MIMEAudio
+from email.mime.image 		import MIMEImage
+from email.mime.text 		import MIMEText
+from email.mime.base 		import MIMEBase
 from email.mime.application import MIMEApplication
 
 def fix_encode_base64(msgobj):
@@ -16,8 +16,9 @@ def fix_encode_base64(msgobj):
 	from email.encoders import encode_base64
 
 	encode_base64(msgobj)
+	text = msgobj.get_payload()
 	if isinstance(text, bytes):
-		text = text.decode('ascii')
+		text = text.decode('utf-8')
 
 	lines = []
 	text = text.replace('\n', '')
@@ -49,13 +50,13 @@ class MailSender(MailTool):
 			if not isinstance(bodytext, bytes):
 				bodytext = bodytext.encode(bodytextEncoding)
 
-			if not attaches:
-				msg = Message()
-				msg.set_payload(bodytext, charset=bodytextEncoding)
-			else:
-				msg = MIMEMultipart()
-				self.addAttachments(msg, bodytext, attaches,
-				bodytextEncoding, attachesEncodings)
+		if not attaches:
+			msg = Message()
+			msg.set_payload(bodytext, charset=bodytextEncoding)
+		else:
+			msg = MIMEMultipart()
+			self.addAttachments(msg, bodytext, attaches,
+									 bodytextEncoding, attachesEncodings)
 		hdrenc = mailconfig.headersEncodeTo or 'utf-8'
 		Subj = self.encodeHeader(Subj, hdrenc)
 		From = self.encodeAddrHeader(From, hdrenc)
@@ -70,14 +71,14 @@ class MailSender(MailTool):
 		for name, value in extrahdrs:
 			if value:
 				if name.lower() not in ['cc', 'bcc']:
-					value = self.encodeHeader(value. hdrenc)
+					value = self.encodeHeader(value,hdrenc)
 					msg[name] = value
 				else:
 					value = [self.encodeAddrHeader(V, hdrenc) for V in value]
 					recip += value
 
-				if name.lower() != 'bcc':
-					msg[name] = ', '.join(value)
+					if name.lower() != 'bcc':
+						msg[name] = ', '.join(value)
 		recip = list(set(recip))
 		fullText = msg.as_string()
 
@@ -142,21 +143,27 @@ class MailSender(MailTool):
 				msg.set_payload(data.read())
 				fix_encode_base64(msg)
 
-			basename = os.path.basename(filename)
+			basename = self.encodeHeader(os.path.basename(filename))
 			msg.add_header('Content-Disposition', 'attachment', filename=basename)
 			mainmsg.attach(msg)
+
+		# text outside mime structure, seen by non-MIME mail readers
 		mainmsg.preamble = 'A multi-part MIME format message.\n'
 		mainmsg.epilogue = ''
 
 	def saveSentMessage(self, fullText, saveMailSeparator):
 		try:
 			sentfile = open(mailconfig.sentmailfile, 'a', encoding=mailconfig.fetchEncoding)
+			if fullText[-1] != '\n': fullText += '\n'
+			sentfile.write(saveMailSeparator)
+			sentfile.write(fullText)
+			sentfile.close()
 		except:
 			self.trace('Could not save sent message')
 
 	def encodeHeader(self, headertext, unicodeencoding='utf-8'):
 		try:
-			headertext.encode('ascii')
+			headertext.encode('utf-8')
 		except:
 			try:
 				hdrobj = email.header.make_header([(headertext, unicodeencoding)])
@@ -181,6 +188,7 @@ class MailSender(MailTool):
 						name = None
 				joined = email.utils.formataddr(name, addr)
 				encoded.append(joined)
+
 			fullhdr = ', '.join(encoded)
 			if len(fullhdr) > 72 or '\n' in fullhdr:
 				fullhdr = ',\n '.join(encoded)
@@ -189,6 +197,9 @@ class MailSender(MailTool):
 			return self.encodeHeader(headertext)
 
 	def authenticateServer(self, server):
+		pass
+
+	def getPassword(self):
 		pass
 
 class MailSenderAuth(MailSender):
