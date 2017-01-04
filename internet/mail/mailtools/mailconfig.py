@@ -19,11 +19,10 @@ mypassword = 'yarqzodyzfakggja'
 pwdfile = './password.txt'
 smtppasswdfile = pwdfile
 poppasswdfile = pwdfile
-sentmailfile = './mailconfig.py'
+sentmailfile = './send.txt'
 savemailfile = './savemail.txt'
 
 fetchEncoding = 'utf8'
 headersEncodeTo = None
 
 fetchlimit = 25
-

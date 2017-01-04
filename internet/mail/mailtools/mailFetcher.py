@@ -79,7 +79,7 @@ class MailFether(MailTool):
 		else:
 			self.trace('loading headers')
 			fetchlimit = mailconfig.fetchlimit
-			server = self.content()
+			server = self.connect()
 			try:
 				resp, msginfos, respsz = server.list()
 				msgCount = len(msginfos)

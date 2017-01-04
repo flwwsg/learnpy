@@ -71,7 +71,7 @@ class MailSender(MailTool):
 		for name, value in extrahdrs:
 			if value:
 				if name.lower() not in ['cc', 'bcc']:
-					value = self.encodeHeader(value. hdrenc)
+					value = self.encodeHeader(value,hdrenc)
 					msg[name] = value
 				else:
 					value = [self.encodeAddrHeader(V, hdrenc) for V in value]
