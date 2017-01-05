@@ -159,7 +159,7 @@ class MailParser(MailTool):
 
 	def parseMessage(self, fulltext):
 		try:
-			return email.parser.Parser(fulltext)
+			return email.parser.Parser().parsestr(fulltext)
 		except:
 			return self.errorMessage
 

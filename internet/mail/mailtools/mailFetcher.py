@@ -217,7 +217,7 @@ class MailFether(MailTool):
 		if not self.popPassword:
 			try:
 				localfile = open(mailconfig.poppasswordfile)
-				self.popPassword = localfile.readline()[:-1]
+				self.popPassword = localfile.read().strip()
 				self.trace('local file password'+repr(self.popPassword))
 			except:
 				self.popPassword = self.askPopPassword()

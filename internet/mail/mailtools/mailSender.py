@@ -215,7 +215,7 @@ class MailSenderAuth(MailSender):
 		if not self.smtpPassword:
 			try:
 				localfile = open(mailconfig.smtppasswordfile)
-				MailSenderAuth.smtpPassword = localfile.readline()[:-1]
+				MailSenderAuth.smtpPassword = localfile.read().strip()
 				self.trace('local file password'+repr(self.smtpPassword))
 			except:
 				MailSenderAuth.smtpPassword = self.askSmtpPassword()

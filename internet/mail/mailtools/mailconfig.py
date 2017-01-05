@@ -17,8 +17,8 @@ mypassword = 'yarqzodyzfakggja'
 
 # yarqzodyzfakggja
 pwdfile = './password.txt'
-smtppasswdfile = pwdfile
-poppasswdfile = pwdfile
+smtppasswordfile = pwdfile
+poppasswordfile = pwdfile
 sentmailfile = './send.txt'
 savemailfile = './savemail.txt'
 

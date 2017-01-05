@@ -28,19 +28,26 @@ fetcher = MailFetcherConsole()
 def status(*args): print(args)
 
 hdrs, sizes, loadedall = fetcher.downloadAllHeaders(status)
-for num, hdr in enumerate(hdrs[:5]):
-	print(hdr)
+for num, hdr in enumerate(hdrs):
+	# print('header is:',hdr)
 	if input('load mail?') in ['y', 'Y']:
-		print(fetcher.downloadAllHeaders(num+1).rstrip(), '\n', '-'*70)
+		print(fetcher.downloadMessage(num+1).rstrip(), '\n', '-'*70)
 
-last5 = len(hdrs)-4
-msgs, sizes, loadedall = fetcher.downloadAllHeaders(status, loadfrom=last5)
-for msg in msgs:
-	print(msg[:200], '\n', '-'*70)
+totalmail = len(hdrs)
+if totalmail < 5:
+	last5 = 1
+else:
+	last5 = totalmail-4
+
+msgs, sizes, loadedall = fetcher.downloadAllMessages(status, loadfrom=last5)
+# for msg in msgs:
+# 	print(msg[:200], '\n', '-'*70)
 
 parser = MailParser()
-for i in [0]:
-	fulltext = msgs[i]
+# print('\nparser messages, tottal messages is %d\n' % len(msgs))
+for msg in msgs:
+	fulltext = msg
+	print('='*80,'msg is:',fulltext,'='*80,sep='\n')
 	message = parser.parseMessage(fulltext)
 	ctype, maintext = parser.findMainText(message)
 	print('Parsed:', message['Subject'])
