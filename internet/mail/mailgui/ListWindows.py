@@ -139,11 +139,221 @@ class PyMailCommon(mailtools.MailParser):
 							dict(From=From, To=To, Cc=Cc,Suject=Subj,Bcc=From)
 										)
 
-	def onFwdMain(self):
+	def onFwdMail(self):
 		msgnums = self.verifySelectedMsgs()
 		if msgnums:
 			self.getMessages(msgnums, after=lambda: self.contFwd(msgnums))
 
 	def contFwd(self, msgnums):
 		for msgnum in msgnums:
-			fulltext 
+			fulltext = self.getMessages(msgnum)
+			message = self.parseMessage(fulltext)
+			maintext = self.formatQuotedMainText(message)
+
+			From = mailconfig.myaddress
+			Subj = message.get('Subject', '(no subject)')
+			Subj = self.decodeHeader(Subj)
+			if Subj[:5].lower() != 'fwd: ':
+				Subj = 'Fwd: '+Subj
+			ForwardWindow(starttext=maintext,
+						  headermap=dict(From=From, Subject=Subj, Bcc=From)
+							)
+
+	def onSaveMailFile(self):
+		msgnums = self.selectedMsgs()
+		if not msgnums:
+			showerror(appname, 'No message selected')
+		else:
+			filename = self.saveDialog.show()
+			if filename:
+				filename = os.path.abspath(filename)
+				self.getMessages(msgnums,after=lambda: self.contSave(msgnums, filename))
+	
+	def contSave(self):
+		if (filename in openSaveFiles.keys() and 
+			openSaveFiles[filename].openFileBusy):
+			showerror(appname, 'Target file busy - cannot save')
+		else:
+			try:
+				fulltext = []
+				mailfie = open(filename, 'a', encoding=mailconfig.fetchEncoding)
+				for msgnum in msgnums:
+					fulltext = self.getMessages(msgnum)
+					if fulltext[-1] != '\n': fulltext += '\n'
+					mailfie.write(saveMailSeparator)
+					mailfie.write(fulltext)
+					fulltextlist.append(fulltext)
+				mailfie.close()
+			except:
+				showerror(appname, 'Error during save')
+				printStack(sys.exc_info())
+			else:
+				if filename in openSaveFiles.keys():
+					window = openSaveFiles[filename]
+					window.addSavedMails(fulltextlist)
+
+	def onOpenMailFile(self, filename=None):
+		filename = filename or self.openDialog.show()
+		if filename:
+			filename = os.path.abspath(filename)
+			if filename in openSaveFiles.keys():
+				openSaveFiles[filename].lift()
+				showinfo(appname, 'File already open')
+			else:
+				from PyMailGui import PyMailFileWindow
+				popup = PyMailFileWindow(filename)
+				openSaveFiles[filename] = popup 
+				popup.loadMailFileThread()
+
+	def onDeleteMail(self):
+		msgnums = self.selectedMsgs()
+		if not msgnums:
+			showerror(appname, 'No message selected')
+		else:
+			if askyesno(appname, 'Verify delete %d mails?' % len(msgnums)):
+				self.doDelete(msgnums)
+
+	def selectedMsgs(self):
+		selections = self.listBox.curselection()
+		return [int(x)+1 for x in selections]
+
+	warningLimit = 15
+	def verifySelectedMsgs(self):
+		msgnums = self.selectedMsgs()
+		if not msgnums:
+			showerror(appname, 'No message selected')
+		else:
+			numselects = len(msgnums)
+			if numselects > self.warningLimit:
+				if not askyesno(appname, 'Open %d selections?' % numselects):
+					msgnums = []
+
+		return msgnums
+
+	def fillIndex(self, maxhdrsize=25):
+		hdrmaps = self.headersMaps()
+		showhdrs = ('Subject', 'From', 'Date', 'To')
+		if hasattr(mailconfig, 'listheaders'):
+			showhdrs = mailconfig.listheaders or showhdrs
+		addrhdrs = ('From', 'To', 'Cc', 'Bcc')
+
+		maxsize = {}
+		for key in showhdrs:
+			allLens = []
+			for msg in hdrmaps:
+				keyval = msg.get(key,' ')
+				if key not in addrhdrs:
+					allLens.append(len(self.decodeHeader(keyval)))
+				else:
+					allLens.append(len(self.decodeHeader(keyval)))
+			if not allLens: allLens = [1]
+			maxsize[key] = min(maxhdrsize, max(allLens))
+
+		self.listBox.delete(0, END)
+		for (ix, msg) in enumerate(hdrmaps):
+			msgtype = msg.get_content_maintype()
+			msgline = (msgtype == 'multipart' and '*') or ' '
+			msgline += '%03d'  % (ix+1)
+			for key in showhdrs:
+				mysize = maxsize[key]
+				if key not in addrhdrs:
+					keytext = self.decodeHeader(msg.get(key, ' '))
+				else:
+					keytext = self.decodeHeader(msg.get(key, ' '))
+				msgline += ' | %-*s' % (mysize, keytext[:mysize])
+			msgline += '| %.1fK' % (self.mailSize(ix+1) / 1024)
+		self.listBox.see(END)
+
+	def replyCopyTo(self, message):
+		if not mailconfig.repliesCopyToAll:
+			Cc = ''
+		else:
+			allRecipients = (self.splitAddress(message.get('To',''))+
+							 self.splitAddress(message.get('Cc',''))
+							)
+			uniqueOthers = set(allRecipients) - set([mailconfig.myaddress])
+			Cc = ', '.join(uniqueOthers)
+		return Cc or '?'
+
+	def formatQuotedMainText(self, message):
+		type, maintext = self.findMainText(message)
+		if type in ['text/html', 'text/xml']:
+			maintext = html2text.html2text(maintext)
+		maintext = wraplines.wrapText1(maintext, mailconfig.wrapsz-2)
+		maintext = self.quoteOrigText(maintext, message)
+		if mailconfig.mysignature:
+			maintext = ('\n%s\n' % mailconfig.mysignature) + maintext
+		return maintext
+
+	def quoteOrigText(self, maintext, message):
+		quoted = '\n----Original Message----\n'
+		for hdr in ('From', 'To', 'Subject', 'Date'):
+			rawhdr = message.get(hdr, '?')
+			if hdr not in ('From', 'To'):
+				dechdr = self.decodeHeader(rawhdr)
+			else:
+				dechdr = self.decodeHeader(rawhdr)
+			quoted += '%s: %s\n' % (hdr, dechdr)
+		quoted += '\n' + maintext
+		quoted = '\n' + quoted.replace('\n', '\n> ')
+
+		return quoted
+
+	def getMessages(self, msgnums, after):
+		after()
+
+	def getMessages(self, msgnum):
+		assert False
+
+	def headersMaps(self):
+		assert False
+
+	def mailSize(self, msgnum):
+		assert False
+
+	def doDelete(self):
+		asStr False
+
+class PyMailFile(PyMailCommon):
+	def actions(self):
+		return [('Open', self.onOpenMailFile),
+				('Write', self.onWriteMail),
+				(' ', None),
+				('View', self.onViewFormatMail),
+				('Reply', self.onReplyMail),
+				('Fwd', self.onFwdMail),
+				('Save', self.onSaveMailFile),
+				('Delete', self.onDeleteMail),
+				]
+	def __init__(self, filename):
+		PyMailCommon.__init__(self)
+		self.filename = filename
+		self.openFileBusy = threadtools.ThreadCounter()
+
+	def loadMailFileThread(self):
+		if self.openFileBusy:
+			errmsg = 'Can not load, file is busy:\n"%s"' % self.filename
+			showerror(appname, errmsg)
+		else:
+			savetitle = self.title()
+			self.title(appname, ' - ' + 'Loading...')
+			self.openFileBusy.incr()
+			threadtools.strartThread(
+				action = self.loadMailFile,
+				args = (),
+				context = (savetitle,),
+				onExit = self.onLoadMailFileExit,
+				onFail = self.onLoadMailFileFail
+				)
+
+	def loadMailFile(self):
+		file = open(self.filename, 'r', encoding=mailconfig.fetchEncoding)
+		allmsgs = file.read()
+		self.msglist = allmsgs.split(saveMailSeparator)[1:]
+		self.hdrlist = list(map(self.parseHeaders, self.msglist))
+
+	def onLoadMailFileExit(self, savetitle):
+		self.title(savetitle)
+		self.fillIndex()
+		self.lift()
+		
